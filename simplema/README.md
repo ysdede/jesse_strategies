@@ -14,9 +14,10 @@ You can manually select dnas for additional pairs or fine tune default values ma
 ## Theory
 This is a simple strategy that involves opening long and short positions at ema crosses, as shown in the chart below. To better visualize trends, I use the elliot wave indicator.  
 
-<a href="https://github.com/ysdede/jesse_strategies/blob/master/simplema/media/ETHUSDTPERP_2021-09-18_22-34-11.png?raw=true"><img src="https://github.com/ysdede/jesse_strategies/blob/master/simplema/media/ETHUSDTPERP_2021-09-18_22-34-11.png?raw=true" width=100% height=100%>
+<img src="https://github.com/ysdede/jesse_strategies/blob/master/simplema/media/ETHUSDTPERP_2021-09-18_22-34-11.png?raw=true" width=100% height=100%>
 
 At the first chart trend reverses before hitting target profit level. A simple cross check in def update_position calls self.liquidate
+
 ```python
 def update_position(self):  
 #...
@@ -25,11 +26,11 @@ def update_position(self):
          self.liquidate()
  ```
 
+
+<img src="https://github.com/ysdede/jesse_strategies/blob/master/simplema/media/ETHUSDTPERP_2021-09-18_22-40-49.png?raw=true" width=100% height=100%>
+
 The trend price reaches the profit target in the second example, and the manual take profit in update position works.
 
-<a href="https://github.com/ysdede/jesse_strategies/blob/master/simplema/media/ETHUSDTPERP_2021-09-18_22-40-49.png?raw=true"><img src="https://github.com/ysdede/jesse_strategies/blob/master/simplema/media/ETHUSDTPERP_2021-09-18_22-40-49.png?raw=true" width=100% height=100%>
-
-At the first chart trend reverses before hitting target profit level. A simple cross check in def update_position calls self.liquidate
 ```python
 def update_position(self):  
     # Take profit when hit!  
@@ -46,8 +47,9 @@ In sideways markets, moving averages suffer. To avoid losses, you must filter ou
 
 ## Installation
 
-If you already have Jesse installed, skip this step.  
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Jesse.
+If you already have Jesse installed, skip this step.
+     
+Use the package manager pip to install Jesse.
 
 ```bash
 pip install jesse
