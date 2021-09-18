@@ -89,7 +89,7 @@ class SimplEma(Strategy):
     @property
     def pos_size(self):
         # self.hp['qty_to_risk'] qty_to_risk parameter disabled. Optimizing position size is not recommended.
-        ps = 15 * len(get_all_trading_routes())  # 15 x Number of routes
+        ps = 10 * len(get_all_trading_routes())  # 15 x Number of routes
 
         if not self.last_was_profitable and self.lose_count <= self.lose_limit:
             return (self.capital / ps) * self.multiplier
