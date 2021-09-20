@@ -2,7 +2,7 @@
 
 This is my Hello World! strategy in Jesse.  
 
-This is an [ema](https://www.investopedia.com/terms/e/ema.asp) trend follower strategy with fixed stop loss and take profit level, uses  [Martingale](https://en.wikipedia.org/wiki/Martingale_(betting_system))-like position sizing system, also utilizes a simple dump & pump filter to avoid sudden price movements.
+It is an [ema](https://www.investopedia.com/terms/e/ema.asp) trend follower strategy with fixed stop loss and take profit level, uses  [Martingale](https://en.wikipedia.org/wiki/Martingale_(betting_system))-like position sizing system, also utilizes a simple dump & pump filter to avoid sudden price movements.
 
 Simplema is optimized using Jesse's GA algorithm for 2018->2021-06-26 period and picked best dnas for 2021 season.  
 I've added optimization log file (ewoHyper2-Binance-BTC-USDT-2h.txt) for recycling.  
