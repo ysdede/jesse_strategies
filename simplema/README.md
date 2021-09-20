@@ -29,7 +29,7 @@ def update_position(self):
 
 <img src="https://github.com/ysdede/jesse_strategies/blob/master/simplema/media/ETHUSDTPERP_2021-09-18_22-40-49.png?raw=true" width=100% height=100%>
 
-The trend price reaches the profit target in the second example, and the manual take profit in update position works.
+The price reaches the profit target in the second example, and the manual take profit in update position works.
 
 ```python
 def update_position(self):  
