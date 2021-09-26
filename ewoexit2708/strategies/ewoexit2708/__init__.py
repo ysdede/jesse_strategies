@@ -8,9 +8,6 @@ class ewoexit2708(Strategy):
     def __init__(self):
         super().__init__()
         self.chop_filter_enabled = True
-        self.initial_qty = 0
-        self.exit_counter = 0
-        self.qty_per_exit = 0
 
     def hyperparameters(self):
         return [
@@ -115,16 +112,12 @@ class ewoexit2708(Strategy):
         qty = utils.size_to_qty(self.calculatepositionsize, self.price, fee_rate=self.fee_rate) * self.leverage + 0.005
         self.buy = qty, self.price
         self.stop_loss = qty, self.price - (self.price * sl)
-        self.initial_qty = qty
-        self.exit_counter = 0
 
     def go_short(self):
         sl = self.stop
         qty = utils.size_to_qty(self.calculatepositionsize, self.price, fee_rate=self.fee_rate) * self.leverage + 0.005
         self.sell = qty, self.price
         self.stop_loss = qty, self.price + (self.price * sl)
-        self.initial_qty = qty
-        self.exit_counter = 0
 
     def update_position(self):
         if self.is_long and utils.crossed(self.exit_fast_ema, self.exit_slow_ema, direction='below', sequential=False):
