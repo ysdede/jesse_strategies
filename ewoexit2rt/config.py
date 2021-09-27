@@ -1,0 +1,263 @@
+config = {
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    # PostgreSQL Database
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    #
+    # PostgreSQL is used as the database to store data such as candles.
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    'databases': {
+        'postgres_host': '192.168.1.30',
+        'postgres_name': 'jesse_db',
+        'postgres_port': 5432,
+        'postgres_username': 'jesse_user',
+        'postgres_password': 'password@€',
+    },
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    # Caching
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    #
+    # In some cases such as loading candles in the backtest mode, a
+    # caching mechanism is used to make further loadings faster.
+    # Valid options (so far) are: 'pickle', None
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    'caching': {
+        'driver': 'pickle',
+        'recycle': True,
+    },
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    # Exchanges
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    #
+    # Below values are used for exchanges.
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    'exchanges': {
+        # https://www.bitfinex.com
+        'Bitfinex': {
+            'fee': 0.0004,
+
+            # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
+            'type': 'futures',
+
+            # futures mode only
+            'settlement_currency': 'USD',
+            # accepted values are: 'cross' and 'isolated'
+            'futures_leverage_mode': 'cross',
+            # 1x, 2x, 10x, 50x, etc. Enter as integers
+            'futures_leverage': 5,
+
+            'assets': [
+                {'asset': 'USDT', 'balance': 0},
+                {'asset': 'USD', 'balance': 10_000},
+                {'asset': 'BTC', 'balance': 0},
+            ],
+        },
+
+        # https://www.binance.com
+        'Binance': {
+            'fee': 0.0004,
+
+            # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
+            'type': 'futures',
+
+            # futures mode only
+            'settlement_currency': 'USDT',
+            # accepted values are: 'cross' and 'isolated'
+            'futures_leverage_mode': 'cross',
+            # 1x, 2x, 10x, 50x, etc. Enter as integers
+            'futures_leverage': 5,
+
+            'assets': [
+                {'asset': 'USDT', 'balance': 10_000},
+                {'asset': 'BUSD', 'balance': 0},
+                {'asset': 'BTC', 'balance': 0},
+                {'asset': 'BTCUP', 'balance': 0},
+                {'asset': 'BTCDOWN', 'balance': 0},
+            ],
+        },
+
+        # https://www.binance.com
+        'Binance Futures': {
+            'fee': 0.0004,
+
+            # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
+            'type': 'futures',
+
+            # futures mode only
+            'settlement_currency': 'USDT',
+            # accepted values are: 'cross' and 'isolated'
+            'futures_leverage_mode': 'cross',
+            # 1x, 2x, 10x, 50x, etc. Enter as integers
+            'futures_leverage': 20,
+
+            'assets': [
+                {'asset': 'USDT', 'balance': 10_000},
+            ],
+        },
+
+        'FTX Futures': {
+            'fee': 0.0006,
+
+            # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
+            'type': 'futures',
+
+            # futures mode only
+            'settlement_currency': 'USD',
+            # accepted values are: 'cross' and 'isolated'
+            'futures_leverage_mode': 'cross',
+            # FTX only allows for 1x, 3x, 5x, 10x, 20x values
+            'futures_leverage': 20,
+
+            'assets': [
+                {'asset': 'USD', 'balance': 10_000},
+            ],
+        },
+
+        'Testnet Bybit Perpetual': {
+            'fee': 0.00075,
+
+            # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
+            'type': 'futures',
+
+            # futures mode only
+            'settlement_currency': 'USDT',
+            # accepted values are: 'cross' and 'isolated'
+            'futures_leverage_mode': 'cross',
+            # 1x, 2x, 10x, 50x, etc. Enter as integers
+            'futures_leverage': 1,
+
+            'assets': [
+                {'asset': 'USDT', 'balance': 10_000},
+            ],
+        },
+
+        'Bybit Perpetual': {
+            'fee': 0.00075,
+
+            # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
+            'type': 'futures',
+
+            # futures mode only
+            'settlement_currency': 'USDT',
+            # accepted values are: 'cross' and 'isolated'
+            'futures_leverage_mode': 'cross',
+            # 1x, 2x, 10x, 50x, etc. Enter as integers
+            'futures_leverage': 1,
+
+            'assets': [
+                {'asset': 'USDT', 'balance': 10_000},
+            ],
+        },
+
+        # https://testnet.binancefuture.com
+        'Testnet Binance Futures': {
+            'fee': 0.0004,
+
+            # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
+            'type': 'futures',
+
+            # futures mode only
+            'settlement_currency': 'USDT',
+            # accepted values are: 'cross' and 'isolated'
+            'futures_leverage_mode': 'cross',
+            # 1x, 2x, 10x, 50x, etc. Enter as integers
+            'futures_leverage': 1,
+
+            'assets': [
+                {'asset': 'USDT', 'balance': 10_000},
+            ],
+        },
+
+        # https://pro.coinbase.com
+        'Coinbase': {
+            'fee': 0.005,
+
+            # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
+            'type': 'futures',
+
+            # futures mode only
+            'settlement_currency': 'USD',
+            # accepted values are: 'cross' and 'isolated'
+            'futures_leverage_mode': 'cross',
+            # 1x, 2x, 10x, 50x, etc. Enter as integers
+            'futures_leverage': 5,
+
+            'assets': [
+                {'asset': 'USDT', 'balance': 10_000},
+                {'asset': 'USD', 'balance': 10_000},
+                {'asset': 'BTC', 'balance': 0},
+            ],
+        },
+    },
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    # Logging
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    #
+    # Below configurations are used to filter out the extra logging
+    # info that are displayed when the "--debug" flag is enabled.
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    'logging': {
+        'order_submission': True,
+        'order_cancellation': True,
+        'order_execution': True,
+        'position_opened': True,
+        'position_increased': True,
+        'position_reduced': True,
+        'position_closed': True,
+        'shorter_period_candles': False,
+        'trading_candles': True,
+        'balance_update': True,
+    },
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    # Metrics
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    #
+    # Below configurations are used to set the metrics
+    # that are displayed after a backtest.
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    'metrics': {
+        'sharpe_ratio': True,
+        'calmar_ratio': True,
+        'sortino_ratio': True,
+        'omega_ratio': False,
+        'winning_streak': True,
+        'losing_streak': True,
+        'largest_losing_trade': True,
+        'largest_winning_trade': True,
+        'total_winning_trades': True,
+        'total_losing_trades': True,
+    },
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    # Optimize mode
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    #
+    # Below configurations are related to the optimize mode
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    'optimization': {
+        # sharpe, calmar, sortino, omega
+        'ratio': 'calmar',
+    },
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    # Data
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    #
+    # Below configurations are related to the data
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    'data': {
+        # The minimum number of warmup candles that is loaded before each session.
+        'warmup_candles_num': 960,
+    }
+}
