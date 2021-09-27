@@ -33,7 +33,8 @@ jesse backtest 2021-09-01 2021-09-25
 # jesse-picker pick
 ### Picking best dnas from log file
 
-We already have a ~4500 lines optimization log file located at `storage/genetics/ewoexit-Binance Futures-ETH-USDT-15m-2021-02-01-2021-08-25.txt`  
+We already have a ~4500 lines optimization log file located at  
+`storage/genetics/ewoexit-Binance Futures-ETH-USDT-15m-2021-02-01-2021-08-25.txt`  
 
 Running `jesse-picker` with `pick` parameter selects and sorts dna strings with given options.  
 `jesse-picker pick log_file_name sort_criteria n1 n2`  
@@ -45,7 +46,7 @@ wr2: Sort by winrate2, test (short) phase winrate
 
 
 #### Magic numbers:  
-n1, n2: pick best performing n dnas from lists. Enter huge numbers to get all dnas.  
+n1, n2: pick best performing n dnas from lists. Enter huge numbers to get all dnas.  TODO: it should be improved.
 
 eg:  
 
