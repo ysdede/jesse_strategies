@@ -129,7 +129,8 @@ ETH-USD    15m   f^TB<3v2v   52     37.55        -8.69    170        46       2.
 ```
 
 It will test all dnas given in dna file with routes.
-It will create a new dna file sorted by Calmar at `jessepickerdata/dnafiles/ETH-USD 2021-09-01 2021-09-25.py`  
+It will create a new dna file sorted by Calmar at  
+`jessepickerdata/dnafiles/ETH-USD 2021-09-01 2021-09-25.py`  
 You can use this as input dna file in the future refinements.
 
 I chose ```=bdOSb@l3``` because I made a bunch of refinements in past with a lot of symbols and find out that they have this dna in common.  
