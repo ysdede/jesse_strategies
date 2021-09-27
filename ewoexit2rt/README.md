@@ -387,11 +387,11 @@ This is the average of 50 tests:
 Total   Total   Max.   Annual      Win     Sharpe  Calmar   Winning  Losing   Largest   Largest  Num .of  Num. of  Market
 Trades  Profit  DD %   Profit      Rate %  Ratio   Ratio    Strike   Strike   Winning   Losing   Wins     Loses    Change
 71.28   23.48   -5.27  10241168    43.78   5.30    2642679  7.00     10.24    500.98    -74.32   31.30    39.98    -0.68
-```
+```  
 
-# Insert Chart-image here
 
-https://github.com/ysdede/ewoexit2rt/blob/master/media/chart.png?raw=true
+<img src="https://github.com/ysdede/jesse_strategies/blob/master/ewoexit2rt/media/chart.png?raw=true" width=100% height=100%>
+
 
 Chart: Results sorted by date
 
