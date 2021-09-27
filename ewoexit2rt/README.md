@@ -393,7 +393,7 @@ Trades  Profit  DD %   Profit      Rate %  Ratio   Ratio    Strike   Strike   Wi
 <img src="https://github.com/ysdede/jesse_strategies/blob/master/ewoexit2rt/media/chart.png?raw=true" width=100% height=100%>
 
 
-Chart: Results sorted by date
+Chart: Results sorted by date, Market Change scaled to right axis.
 
 As seen on the chart strategy performs too bad at March 2021, we can isolate routes and perform single backtests to find out what's happening.
 
