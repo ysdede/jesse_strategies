@@ -1,0 +1,4 @@
+['Pair', 'TF', 'Dna', 'Start Date', 'End Date', 'Total Trades', 'Total Net Profit', 'Max.DD', 'Annual Profit', 'Winrate', 'Sharpe', 'Calmar', 'Serenity', 'Winning Strike', 'Losing Strike', 'Largest Winning', 'Largest Losing', 'Num. of Wins', 'Num. of Losses', 'Market Change']
+['BTC-USDT', '5m', 'F=v(49', '2021-01-01', '2021-10-01', '7120', '-3.76', '-24.0', -5, '43', '-0.03', '0.0', '-0.21', '42', '39', 21, -70, '3074', '4046', '353.84']
+['BTC-USDT', '5m', 'j/vPJ_', '2021-01-01', '2021-10-01', '690', '-1.08', '-13.0', -1, '37', '-0.01', '-0.07', '-0.11', '11', '18', 88, -52, '255', '435', '353.84']
+['BTC-USDT', '5m', 'F=w(49', '2021-01-01', '2021-10-01', '7118', '-3.81', '-24.0', -5, '43', '-0.03', '0.0', '-0.22', '41', '39', 21, -71, '3058', '4060', '353.84']

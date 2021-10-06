@@ -1,0 +1,2 @@
+['Pair', 'TF', 'Dna', 'Start Date', 'End Date', 'Total Trades', 'Total Net Profit', 'Max.DD', 'Annual Profit', 'Winrate', 'Sharpe', 'Calmar', 'Winning Strike', 'Losing Strike', 'Largest Winning', 'Largest Losing', 'Num. of Wins', 'Num. of Losses', 'Market Change']
+['ETH-USDT', '5m', ':7fs*j9', '2021-05-01', '2021-10-01', '232', '54.46', '-30.07', 181, '41', '1.65', '6.03', '6', '8', 2294, -716, '94', '138', '8.29']

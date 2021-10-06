@@ -1,0 +1,4 @@
+['Pair', 'TF', 'Dna', 'Start Date', 'End Date', 'Total Trades', 'Total Net Profit', 'Max.DD', 'Annual Profit', 'Winrate', 'Sharpe', 'Calmar', 'Winning Strike', 'Losing Strike', 'Largest Winning', 'Largest Losing', 'Num. of Wins', 'Num. of Loses', 'Market Change']
+['BTC-USDT', '5m', 'BTC-USDT', '2021-07-01', '2021-10-01', '55', '45.24', '-22.22', 333, '42', '2.48', '14.97', '3', '7', 1111, -1038, '23', '32', '25.26']
+['ETH-USDT', '5m', 'ETH-USDT', '2021-07-01', '2021-10-01', '63', '198.04', '-15.59', 7168, '49', '5.41', '459.68', '5', '4', 2502, -1705, '31', '32', '32.17']
+['SOL-USDT', '5m', 'SOL-USDT', '2021-07-01', '2021-10-01', '85', '-0.43', '-43.22', -2, '44', '0.68', '-0.04', '3', '5', 1135, -1432, '37', '48', '300.02']

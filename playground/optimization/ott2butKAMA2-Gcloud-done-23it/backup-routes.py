@@ -1,0 +1,27 @@
+routes = [
+    ('Binance Futures', 'CRO-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'ASD-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'IOTA-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'NEO-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'ZRX-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'BADGER-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'RUNE-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'XLM-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'XEM-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'MER-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'ETH-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'SKL-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'PUNDIX-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'OXY-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'SC-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'ALCX-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'MEDIA-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'TRU-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'FIL-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'RSR-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'WAVES-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'CONV-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+    ('Binance Futures', 'BNB-USDT', '5m', 'Ott2butKAMA', 'WL1T,O'),
+]
+
+extra_candles = []

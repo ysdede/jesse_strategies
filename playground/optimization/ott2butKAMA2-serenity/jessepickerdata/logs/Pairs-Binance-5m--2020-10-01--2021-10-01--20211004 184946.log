@@ -1,0 +1,2 @@
+['Pair', 'TF', 'Dna', 'Start Date', 'End Date', 'Total Trades', 'Total Net Profit', 'Max.DD', 'Annual Profit', 'Winrate', 'Sharpe', 'Calmar', 'Serenity', 'Winning Strike', 'Losing Strike', 'Largest Winning', 'Largest Losing', 'Num. of Wins', 'Num. of Loses', 'Market Change']
+['BTC-USDT', '5m', 'BTC-USDT', '2020-10-01', '2021-10-01', '284', '-0.87', '-2.35', -1, '29', '-0.05', '-0.27', '-0.37', '4', '15', 64, -32, '81', '203', '306.49']

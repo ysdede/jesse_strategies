@@ -1,0 +1,4 @@
+['Pair', 'TF', 'Dna', 'Start Date', 'End Date', 'Total Trades', 'Total Net Profit', 'Max.DD', 'Annual Profit', 'Winrate', 'Sharpe', 'Calmar', 'Winning Strike', 'Losing Strike', 'Largest Winning', 'Largest Losing', 'Num. of Wins', 'Num. of Losses', 'Market Change']
+['ETH-USD', '5m', 'NnQVw', '2021-04-01', '2021-08-01', '26', '11.72', '-14.11', 39, '35', '1.18', '2.76', '2', '3', 2065, -874, '9', '17', '30.71']
+['ETH-USD', '5m', 'Nnhuq', '2021-04-01', '2021-08-01', '15', '15.48', '-6.8', 53, '47', '1.8', '7.84', '3', '2', 1546, -325, '7', '8', '30.71']
+['ETH-USD', '5m', 'r0W:I', '2021-04-01', '2021-08-01', '144', '35.04', '-18.19', 144, '44', '2.02', '7.91', '5', '10', 1431, -538, '63', '81', '30.71']

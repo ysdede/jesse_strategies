@@ -1,0 +1,35 @@
+Evolving...  [#################################---]   93%  00:07:55
+
+ INFO        |
+-------------+------------------------------------
+ Started At  |                        2 hours ago
+ Index/Total |                         9360/10000
+ errors/info |                                0/0
+ Route       | FTX Futures, ETH-USD, 5m, ottKama1
+
+
+Best DNA candidates:
+
+
+ Rank   | DNA   | Training log || Testing log
+--------+-------+---------------------------------------------------------------------------------
+ 1      | VKPOM | win-rate: 37%, total: 90, PNL: 56.11% || win-rate: 30%, total: 13, PNL: -0.21%
+ 2      | 3Gj:/ | win-rate: 41%, total: 170, PNL: 64.01% || win-rate: 33%, total: 30, PNL: -3.45%
+ 3      | KNLaI | win-rate: 36%, total: 93, PNL: 49.07% || win-rate: 41%, total: 12, PNL: 0.32%
+ 4      | KlLa\ | win-rate: 36%, total: 57, PNL: 31.72% || win-rate: 25%, total: 8, PNL: -1.25%
+ 5      | KuLaI | win-rate: 29%, total: 68, PNL: 21.56% || win-rate: 33%, total: 9, PNL: 0.77%
+ 6      | KlLat | win-rate: 36%, total: 19, PNL: 14.05% || win-rate: 33%, total: 3, PNL: 1.11%
+ 7      | KlLav | win-rate: 36%, total: 19, PNL: 14.05% || win-rate: 50%, total: 2, PNL: 2.46%
+ 8      | r1W:I | win-rate: 47%, total: 130, PNL: 43.23% || win-rate: 68%, total: 19, PNL: 24.98%
+ 9      | KhLaI | win-rate: 32%, total: 68, PNL: 20.07% || win-rate: 44%, total: 9, PNL: 6.6%
+ 10     | KFLaI | win-rate: 32%, total: 109, PNL: 16.05% || win-rate: 56%, total: 16, PNL: 15.27%
+ 11     | KlL-I | win-rate: 31%, total: 66, PNL: 14.85% || win-rate: 25%, total: 8, PNL: -1.18%
+ 12     | \T<UI | win-rate: 35%, total: 76, PNL: 30.01% || win-rate: 30%, total: 13, PNL: -0.89%
+ 13     | .l<KI | win-rate: 27%, total: 114, PNL: 37.42% || win-rate: 40%, total: 15, PNL: 2.94%
+ 14     | rl?:I | win-rate: 37%, total: 53, PNL: 28.39% || win-rate: 28%, total: 7, PNL: 6.86%
+ 15     | K7L:I | win-rate: 45%, total: 162, PNL: 41.06% || win-rate: 55%, total: 20, PNL: 16.37%
+Evolving...  [####################################]  100%          
+
+fitness goal reached after iteration 155
+
+yunusseyhandede@instance-1:~/jesse-projects/ottKamaOpt1Gcloud$ jesse optimize 2021-04-12 2021-09-25 100 --csv --json
