@@ -1,0 +1,477 @@
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 5118
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 80, in get_fitness
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 5292
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 80, in get_fitness
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 5534
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 80, in get_fitness
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 5972
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 80, in get_fitness
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 6011
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 80, in get_fitness
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 6713
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 80, in get_fitness
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 7147
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 7149
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 80, in get_fitness
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 80, in get_fitness
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 7922
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 80, in get_fitness
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 9633
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 228, in get_baby
+    baby = self.mutate(baby)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 164, in mutate
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 10584
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 228, in get_baby
+    baby = self.mutate(baby)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 164, in mutate
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 12234
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 228, in get_baby
+    baby = self.mutate(baby)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 164, in mutate
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 17458
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 228, in get_baby
+    baby = self.mutate(baby)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 164, in mutate
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 17837
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 228, in get_baby
+    baby = self.mutate(baby)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 164, in mutate
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
+[ERROR | 2021-05-01T00:05:00] process failed - ID: 18691
+[ERROR | 2021-05-01T00:05:00] Traceback (most recent call last):
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 228, in get_baby
+    baby = self.mutate(baby)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/Genetics.py", line 164, in mutate
+    fitness_score, fitness_log_training, fitness_log_testing = self.fitness(dna)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/optimize_mode/__init__.py", line 101, in fitness
+    simulator(self.training_candles, hp)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/modes/backtest_mode/__init__.py", line 317, in simulator
+    r.strategy._execute()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 848, in _execute
+    self._check()
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/strategies/Strategy.py", line 648, in _check
+    should_short = self.should_short()
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 73, in should_short
+    return self.cross_down and self.chop[-1] < self.chop_lower_band
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 109, in cross_down
+    return utils.crossed(self.ott.mavg, self.ott.ott, direction='below', sequential=False)
+  File "/home/yunus/.local/lib/python3.8/site-packages/jesse/services/cache.py", line 187, in decorated
+    return cached_method(self, *args, **kwargs)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/strategies/Ott2butKAMA/__init__.py", line 50, in ott
+    return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+  File "/mnt/g/Drive'ım/jesse-projects/Optimizasyon/ott2butKAMA1/custom_indicators/ott.py", line 36, in ott
+    MAvg = talib.KAMA(source, length)
+  File "/home/yunus/.local/lib/python3.8/site-packages/talib/__init__.py", line 27, in wrapper
+    return func(*args, **kwargs)
+  File "talib/_func.pxi", line 3205, in talib._ta_lib.KAMA
+  File "talib/_common.pxi", line 47, in talib._ta_lib._ta_check_success
+Exception: TA_KAMA function failed with error code 2: Bad Parameter (TA_BAD_PARAM)
+
+[ERROR | 2021-09-25T17:29:14] a process exited with exitcode: 1
