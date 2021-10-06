@@ -1,0 +1,77 @@
+
+
+Best DNA candidates:
+
+
+ Rank   | DNA       | Training log || Testing log
+--------+-----------+----------------------------------------------------------------------------------
+ 1      | r42OV8u?a | win-rate: 46%, total: 89, PNL: 103.59% || win-rate: 57%, total: 21, PNL: 9.33%
+ 2      | D<W[3@GY: | win-rate: 35%, total: 127, PNL: 28.81% || win-rate: 28%, total: 28, PNL: 2.7%
+ 3      | (UDD0p)vq | win-rate: 29%, total: 133, PNL: 394.14% || win-rate: 17%, total: 29, PNL: 10.99%
+ 4      | PUu@;^[6v | win-rate: 36%, total: 69, PNL: 113.61% || win-rate: 60%, total: 10, PNL: 21.15%
+ 5      | *qDIIT)@q | win-rate: 35%, total: 115, PNL: 437.73% || win-rate: 36%, total: 22, PNL: 4.13%
+ 6      | --@jX\;RZ | win-rate: 55%, total: 20, PNL: 54.89% || win-rate: 75%, total: 4, PNL: 7.92%
+ 7      | b-Zjg\9Rd | win-rate: 56%, total: 16, PNL: 68.18% || win-rate: 60%, total: 5, PNL: -0.24%
+ 8      | (UDDI<)vq | win-rate: 25%, total: 148, PNL: 257.03% || win-rate: 14%, total: 35, PNL: 1.01%
+ 9      | ;(,B93J2Y | win-rate: 27%, total: 107, PNL: 19.07% || win-rate: 32%, total: 25, PNL: -5.19%
+ 10     | (qDII5)@q | win-rate: 25%, total: 180, PNL: 315.01% || win-rate: 26%, total: 34, PNL: 4.99%
+ 11     | (<1[;@vYv | win-rate: 24%, total: 117, PNL: 209.3% || win-rate: 26%, total: 23, PNL: 20.86%
+ 12     | PU4RB^(6v | win-rate: 46%, total: 98, PNL: 227.84% || win-rate: 50%, total: 12, PNL: 17.33%
+ 13     | gUTR<4v6v | win-rate: 44%, total: 75, PNL: 263.53% || win-rate: 69%, total: 13, PNL: 26.09%
+ 14     | 1bT?<;vuv | win-rate: 34%, total: 85, PNL: 223.45% || win-rate: 57%, total: 14, PNL: 31.83%
+ 15     | Yq^I;Tt@v | win-rate: 45%, total: 72, PNL: 262.74% || win-rate: 75%, total: 12, PNL: 24.98%
+Executing simulation...  [------------------------------------]    0%
+Route       | Binance Futures, ETH-USDT, 15m, ewoexit
+
+
+Best DNA candidates:
+
+
+ Rank   | DNA       | Training log || Testing log
+--------+-----------+----------------------------------------------------------------------------------
+ 1      | r42OV8u?a | win-rate: 46%, total: 89, PNL: 103.59% || win-rate: 57%, total: 21, PNL: 9.33%
+ 2      | (UDD0p)vq | win-rate: 29%, total: 133, PNL: 394.14% || win-rate: 17%, total: 29, PNL: 10.99%
+ 3      | PUu@;^[6v | win-rate: 36%, total: 69, PNL: 113.61% || win-rate: 60%, total: 10, PNL: 21.15%
+ 4      | *qDIIT)@q | win-rate: 35%, total: 115, PNL: 437.73% || win-rate: 36%, total: 22, PNL: 4.13%
+ 5      | --@jX\;RZ | win-rate: 55%, total: 20, PNL: 54.89% || win-rate: 75%, total: 4, PNL: 7.92%
+ 6      | b-Zjg\9Rd | win-rate: 56%, total: 16, PNL: 68.18% || win-rate: 60%, total: 5, PNL: -0.24%
+ 7      | (UDDI<)vq | win-rate: 25%, total: 148, PNL: 257.03% || win-rate: 14%, total: 35, PNL: 1.01%
+ 8      | YqTw;T?@v | win-rate: 42%, total: 68, PNL: 311.81% || win-rate: 46%, total: 13, PNL: 12.27%
+ 9      | ;(,B93J2Y | win-rate: 27%, total: 107, PNL: 19.07% || win-rate: 32%, total: 25, PNL: -5.19%
+ 10     | (qDII5)@q | win-rate: 25%, total: 180, PNL: 315.01% || win-rate: 26%, total: 34, PNL: 4.99%
+ 11     | :q-I5T)@: | win-rate: 32%, total: 255, PNL: 172.27% || win-rate: 28%, total: 49, PNL: 9.25%
+ 12     | (<1[;@vYv | win-rate: 24%, total: 117, PNL: 209.3% || win-rate: 26%, total: 23, PNL: 20.86%
+ 13     | PU4RB^(6v | win-rate: 46%, total: 98, PNL: 227.84% || win-rate: 50%, total: 12, PNL: 17.33%
+ 14     | gUTR<4v6v | win-rate: 44%, total: 75, PNL: 263.53% || win-rate: 69%, total: 13, PNL: 26.09%
+ 15     | Yq^I;Tt@v | win-rate: 45%, total: 72, PNL: 262.74% || win-rate: 75%, total: 12, PNL: 24.98%
+
+Evolving...  [######------------------------------]   18%  2d 05:21:55
+
+ INFO        |
+-------------+-----------------------------------------
+ Started At  |                            12 hours ago
+ Index/Total |                              3381/18000
+ errors/info |                                     0/0
+ Route       | Binance Futures, ETH-USDT, 15m, ewoexit
+
+
+Best DNA candidates:
+
+
+ Rank   | DNA       | Training log || Testing log
+--------+-----------+----------------------------------------------------------------------------------
+ 1      | r42OV8u?a | win-rate: 46%, total: 89, PNL: 103.59% || win-rate: 57%, total: 21, PNL: 9.33%
+ 2      | (UDD0p)vq | win-rate: 29%, total: 133, PNL: 394.14% || win-rate: 17%, total: 29, PNL: 10.99%
+ 3      | PUu@;^[6v | win-rate: 36%, total: 69, PNL: 113.61% || win-rate: 60%, total: 10, PNL: 21.15%
+ 4      | *qDIIT)@q | win-rate: 35%, total: 115, PNL: 437.73% || win-rate: 36%, total: 22, PNL: 4.13%
+ 5      | b-Zjg\9Rd | win-rate: 56%, total: 16, PNL: 68.18% || win-rate: 60%, total: 5, PNL: -0.24%
+ 6      | (UDDI<)vq | win-rate: 25%, total: 148, PNL: 257.03% || win-rate: 14%, total: 35, PNL: 1.01%
+ 7      | YqTw;T?@v | win-rate: 42%, total: 68, PNL: 311.81% || win-rate: 46%, total: 13, PNL: 12.27%
+ 8      | ;(,B93J2Y | win-rate: 27%, total: 107, PNL: 19.07% || win-rate: 32%, total: 25, PNL: -5.19%
+ 9      | :q-I5T)@: | win-rate: 32%, total: 255, PNL: 172.27% || win-rate: 28%, total: 49, PNL: 9.25%
+ 10     | (<1[;@vYv | win-rate: 24%, total: 117, PNL: 209.3% || win-rate: 26%, total: 23, PNL: 20.86%
+ 11     | PU4RB^(6v | win-rate: 46%, total: 98, PNL: 227.84% || win-rate: 50%, total: 12, PNL: 17.33%
+ 12     | gUTR<4v6v | win-rate: 44%, total: 75, PNL: 263.53% || win-rate: 69%, total: 13, PNL: 26.09%
+ 13     | Yq^I;Tt@v | win-rate: 45%, total: 72, PNL: 262.74% || win-rate: 75%, total: 12, PNL: 24.98%
+ 14     | (qDIIT)*q | win-rate: 29%, total: 146, PNL: 273.46% || win-rate: 36%, total: 25, PNL: 3.65%
+ 15     | YUTR;0t6v | win-rate: 42%, total: 77, PNL: 236.7% || win-rate: 69%, total: 13, PNL: 26.09%
