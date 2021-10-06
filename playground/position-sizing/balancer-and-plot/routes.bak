@@ -1,0 +1,16 @@
+routes = [
+    # ('Binance Futures', 'AAVE-USDT', '5m', 'wtewohp2chophp1', '0X8'),
+                                                                                # 0XA 0X8 2D; j0A l0A 00d 20e i0S h0q 0[; 2[; q/b h0q 20O 20w 0-w
+                                                                                # =6m   2U9 @+] .e/ N;Y _/Q 8VE \,[ [0+ 8HO *U5 ^6: W1L /S,
+    #   AAVE 5 Min                                          #   2.46    226
+    # ('Binance Futures', 'LTC-USDT', '2h', 'emafilter'),   #   1.6     220
+    ('Binance Futures', 'BNB-USDT', '30m', 'emafilter'),  #   1.99    361
+    ('Binance Futures', 'ETH-USDT', '30m', 'emafilter'),  #   2.3     625
+    ('Binance Futures', 'BTC-USDT', '2h', 'emafilter'),   #   2.84    905
+    ('Binance Futures', 'NEO-USDT', '2h', 'emafilter'),   #   2.7     707
+    ('Binance Futures', 'QTUM-USDT', '4h', 'emafilter'),  #   3.47    262
+          ]
+
+extra_candles = [
+    # ('Binance Futures', 'AAVE-USDT', '1h'),
+]

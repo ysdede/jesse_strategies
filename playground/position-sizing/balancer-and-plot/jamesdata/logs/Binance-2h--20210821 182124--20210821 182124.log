@@ -1,0 +1,3 @@
+['Pair', 'TF', 'Start Date', 'End Date', 'Total Trades', 'Total Net Profit', 'Max.DD', 'Annual Profit', 'Winrate', 'Sharpe', 'Calmar', 'Winning Strike', 'Losing Strike', 'Largest Winning', 'Largest Losing', 'Num. of Wins', 'Num. of Losses', 'Market Change']
+['TRX-USDT', '2h', '2020-11-20', '2021-05-22', '857', '743.96', '-17.0', 6779, '27', '5.21', '398.77', '6', '33', 11685, -1610, '230', '627', '366.12']
+['TRX-USDT', '2h', '2020-07-31', '2021-01-30', '990', '128.1', '-28.77', 413, '24', '2.43', '14.37', '5', '33', 2930, -880, '233', '757', '139.07']

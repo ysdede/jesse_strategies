@@ -1,0 +1,2 @@
+['Pair', 'TF', 'Start Date', 'End Date', 'Total Trades', 'Total Net Profit', 'Max.DD', 'Annual Profit', 'Winrate', 'Sharpe', 'Calmar', 'Winning Strike', 'Losing Strike', 'Largest Winning', 'Largest Losing', 'Num. of Wins', 'Num. of Losses', 'Market Change']
+['AAVE-USDT', '5m', '2021-06-09', '2021-06-19', '31', '4.7', '-3.37', 359, '35', '3.37', '106.68', '2', '4', 62, -11, '11', '20', '-19.7']

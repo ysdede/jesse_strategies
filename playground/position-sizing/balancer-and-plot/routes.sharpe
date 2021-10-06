@@ -1,0 +1,33 @@
+from jesse.utils import anchor_timeframe
+
+# trading routes
+routes = [
+    ('Binance', 'TRX-USDT', '2h', 'emasharpe2'),
+    ('Binance', 'BTC-USDT', '2h', 'emasharpe2'),
+    ('Binance', 'ETH-USDT', '30m', 'emasharpe2'),
+    ('Binance', 'BNB-USDT', '30m', 'emasharpe2'),
+    ('Binance', 'ADA-USDT', '2h', 'emasharpe2'),
+    ('Binance', 'NEO-USDT', '2h', 'emasharpe2'),
+    ('Binance', 'QTUM-USDT', '4h', 'emasharpe2'),
+    ('Binance', 'LTC-USDT', '2h', 'emasharpe2'),
+    ('Binance', 'XRP-USDT', '2h', 'emasharpe2'),
+
+    #('Binance', 'EOS-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'XLM-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'IOTA-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'ONT-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'YFI-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'ETC-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'ICX-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'NULS-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'VET-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'XMR-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'DASH-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'NANO-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'DOT-USDT', '2h', 'emasharpe2'),
+    #('Binance', 'LINK-USDT', '2h', 'emasharpe2'),
+]
+
+extra_candles = [
+]
+

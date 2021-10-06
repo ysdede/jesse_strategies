@@ -1,0 +1,30 @@
+q/b 3.1     39      %94 Long    28  53  42
+2[; 3.02    26.88   %59 %41     6   69  27  fee 5000/2000 sharpe 2.48 fena değil
+0[; 3.02    26.88   %59 %41                 fee 5000/200
+h0q 2.64    21.28   %44 %56     25  53  48  Short için olabilir, bu dönem iyi değil
+i0S 3.51    63.33   %100 long   25  53  36
+20e 2.37    15.89
+00d 2.37    15.89   %52 +48     6   53  43  fee fazla işlem fazla zarar
+l0A 3.37    56.77
+j0A 3.37    56.77   %100 long   26  53  29
+2D; 2.73    25.83   %70 %30     6   61  27  fee 1/2 çok işlem, fena değil
+CBL 2.9     31.03   %79 %21 12  60  34  güzel, short az bakılacak
+0X8 -> Uzun periyodda sharpe (diğerleri daha avantajlı tarihlerde çalıştı): 2.68    30.42   %63 %37   6   68  26
+0XA 3.28    45.4    %55 %45     6   68  29  1/2 fee 1500 işlem eh iyi
+h0q 2.64    21.28   %44 %56     25  53  48  Fazla işlem fazla fee zarar yok
+20O 2.24    13.06    %59    %41     6   53  35  aşırı işlem ve zarar filtre yok gibi
+20w 2.02    8.56     %50    %50          60  53  50 aşırı işlem ve zarar filtre yok gibi
+0-w 1.98    8.01    %50 %50     6   52  50 Aşırı işlem ve zarar filtre yok gibi
+=6m 2.33    16.02   %49 %51     10  55  46 -PNL aşırı işlem
+2U9 3.09    36.73   %65 %35     6   67  26  1/3 fee
+@+] 2.29    13.1    %64 %36     11  51  40  FEE ÇOK FAZLA
+.e/ 2.89    23.59   %58 %42     5   73  23
+N;Y 2.58    20.32   %75 %251    16  57  39
+_/Q 2.83    45.76   %100 0      22  53  36
+8VE 2.15    9.05    %55 %45     8   67  31
+\,[ 2.92    30.94   %97 %3      21  52  39
+[0+ 2.75    37.13   %100 long   20  53  21
+8HO 2.6     23.59   %56 %44     8   62  35
+*U5 2.76    28.84   %59 %41     4   67  25
+W1L 2.67    30.61   %99 long
+/S, 2.41    14.5    %71 long

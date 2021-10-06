@@ -1,0 +1,4 @@
+['Pair', 'TF', 'Start Date', 'End Date', 'Total Trades', 'Total Net Profit', 'Max.DD', 'Annual Profit', 'Winrate', 'Sharpe', 'Calmar', 'Winning Strike', 'Losing Strike', 'Largest Winning', 'Largest Losing', 'Num. of Wins', 'Num. of Losses', 'Market Change']
+['HOT-USDT', '5m', '2021-03-21', '2021-04-11', '58', '-25.45', '-26.13', -99, '16', '-7.77', '-3.8', '2', '10', 613, -180, '9', '49', '145.7']
+['HOT-USDT', '5m', '2021-05-16', '2021-06-06', '47', '2.64', '-8.53', 54, '28', '1.11', '6.34', '2', '7', 732, -199, '13', '34', '-23.17']
+['HOT-USDT', '5m', '2021-02-23', '2021-03-16', '45', '2.99', '-18.45', 63, '24', '0.92', '3.41', '3', '6', 2382, -189, '11', '34', '106.26']
