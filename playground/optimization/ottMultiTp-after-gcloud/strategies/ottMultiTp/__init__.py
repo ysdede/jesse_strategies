@@ -94,10 +94,32 @@ class ottMultiTp(Strategy):
     def should_short(self) -> bool:
         return self.cross_down and self.chop[-1] < self.chop_lower_band
 
+    # //
+    @property
+    @cached
+    def dynamic_size(self):
+        size = 0
+        if not self.metrics:
+            size = round(self.capital * 0.05)
+        elif 0 <= self.metrics['winning_streak'] < 5:
+            size = round(self.capital * 0.05)
+        elif self.metrics['winning_streak'] >= 10:
+            size = round(self.capital * 0.125)
+        elif self.metrics['losing_streak'] >= 5:
+            size = round(self.capital * 0.025)
+        return size
+
     @property
     @cached
     def pos_size(self):
-        return utils.size_to_qty(self.capital/(len(get_all_trading_routes()) * 8), self.price, fee_rate=self.fee_rate) * self.leverage  # + 0.001
+        return (utils.size_to_qty(self.dynamic_size, self.price, fee_rate=self.fee_rate) * self.leverage) + 0.001
+
+    # //
+
+    # @property
+    # @cached
+    # def pos_size(self):
+    #     return utils.size_to_qty(self.capital/(len(get_all_trading_routes()) * 5), self.price, fee_rate=self.fee_rate) * self.leverage  # + 0.001
 
     def go_long(self):
         self.buy = self.pos_size, self.price
