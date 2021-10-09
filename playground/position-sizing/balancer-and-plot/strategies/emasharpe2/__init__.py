@@ -209,23 +209,19 @@ class emasharpe2(Strategy):
 
     def should_long(self) -> bool:
         dc = True
-        dp = False
         if self.donchianfilterenabled:
             dc = self.close >= self.entry_donchian[1]
 
-        if self.dpfilterenabled:
-            dp = self.dumpump
+        dp = self.dumpump if self.dpfilterenabled else False
         return utils.crossed(self.fast_ema, self.slow_ema, direction='above',
                              sequential=False) and not dp and dc and self.enablelong
 
     def should_short(self) -> bool:
         dc = True
-        dp = False
         if self.donchianfilterenabled:
             dc = self.close <= self.entry_donchian[1]
 
-        if self.dpfilterenabled:
-            dp = self.dumpump
+        dp = self.dumpump if self.dpfilterenabled else False
         return utils.crossed(self.fast_ema, self.slow_ema, direction='below',
                              sequential=False) and not dp and dc and self.enableshort
 
@@ -426,10 +422,8 @@ class emasharpe2(Strategy):
             # print(f"\nI'm {self.symbol}, MyShare is {self.shared_vars[self.symbol]['MyShare']}. Total Share is {self.shared_vars['Shares']}")
 
     def createreport(self, _res, _fname):
-        # Create csv report
-        f = open(_fname, 'w')
-        f.write(str(self.header1).replace('[', '').replace(']', '').replace(' ', '') + '\n')
-        for srline in _res:
-            f.write(str(srline).replace('[', '').replace(']', '').replace(' ', '') + '\n')
-        os.fsync(f.fileno())
-        f.close()
+        with open(_fname, 'w') as f:
+            f.write(str(self.header1).replace('[', '').replace(']', '').replace(' ', '') + '\n')
+            for srline in _res:
+                f.write(str(srline).replace('[', '').replace(']', '').replace(' ', '') + '\n')
+            os.fsync(f.fileno())

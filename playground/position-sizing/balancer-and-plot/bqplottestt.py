@@ -18,10 +18,7 @@ aave_high = aave_candles[:, 3]
 aave_low = aave_candles[:, 4]
 aave_volume = aave_candles[:, 5]
 
-times = []
-for c in aave_candles:
-    times.append(datetime.datetime.fromtimestamp(c[0] / 1000))
-
+times = [datetime.datetime.fromtimestamp(c[0] / 1000) for c in aave_candles]
 fig.layout.width="800px"
 
 

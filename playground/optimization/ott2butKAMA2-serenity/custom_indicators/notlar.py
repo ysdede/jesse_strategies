@@ -12,10 +12,7 @@ def my_shift(arr, num=1):
     out = np.copy(arr)
     for i in range(arr.size):
         prev = arr[i - num]
-        if np.isnan(prev):
-            out[i] = arr[i]
-        else:
-            out[i] = prev
+        out[i] = arr[i] if np.isnan(prev) else prev
     return out
 
 

@@ -20,10 +20,7 @@ aave_low = aave_candles[:, 4]
 aave_volume = aave_candles[:, 5]
 
 # convect timestamps into a format that is supported for plotting
-times = []
-for c in aave_candles:
-    times.append(int(c[0] / 1000000))
-
+times = [int(c[0] / 1000000) for c in aave_candles]
 output_notebook(resources=INLINE)
 
 inc = aave_close > aave_open

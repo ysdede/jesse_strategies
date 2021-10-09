@@ -114,18 +114,17 @@ class Ott2butKAMA(Strategy):
         if self.is_short and self.cross_up:
             self.liquidate()
 
-        if True:  # Trailing stop
-            if self.is_long and self.average_stop_loss:
-                sl = self.ott.ott[-1] - (self.ott.ott[-1] * self.stop)
+        if self.is_long and self.average_stop_loss:
+            sl = self.ott.ott[-1] - (self.ott.ott[-1] * self.stop)
 
-                if sl > self.average_stop_loss and sl > self.average_entry_price:
-                    self.stop_loss = self.position.qty, sl
+            if sl > self.average_stop_loss and sl > self.average_entry_price:
+                self.stop_loss = self.position.qty, sl
 
-            if self.is_short and self.average_stop_loss:
-                sl = self.ott.ott[-1] + (self.ott.ott[-1] * self.stop)
+        if self.is_short and self.average_stop_loss:
+            sl = self.ott.ott[-1] + (self.ott.ott[-1] * self.stop)
 
-                if sl < self.average_stop_loss and sl < self.average_entry_price:
-                    self.stop_loss = self.position.qty, sl
+            if sl < self.average_stop_loss and sl < self.average_entry_price:
+                self.stop_loss = self.position.qty, sl
 
     def should_cancel(self) -> bool:
         return True

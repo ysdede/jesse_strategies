@@ -117,9 +117,11 @@ class emafilter(Strategy):
     @property
     @cached
     def positionsize(self):
-        if len(get_all_trading_routes()) < 3:
-            return 10 * len(get_all_trading_routes())
-        elif self.symbol.startswith('ETH-'):
+        if (
+            len(get_all_trading_routes()) < 3
+            or len(get_all_trading_routes()) >= 3
+            and self.symbol.startswith('ETH-')
+        ):
             return 10 * len(get_all_trading_routes())
         else:
             return 16 * len(get_all_trading_routes())
@@ -161,23 +163,19 @@ class emafilter(Strategy):
 
     def should_long(self) -> bool:
         dc = True
-        dp = False
         if self.donchianfilterenabled:
             dc = self.close >= self.entry_donchian[1]
 
-        if self.dpfilterenabled:
-            dp = self.dumpump
+        dp = self.dumpump if self.dpfilterenabled else False
         return utils.crossed(self.fast_ema, self.slow_ema, direction='above',
                              sequential=False) and not dp and dc and self.enablelong
 
     def should_short(self) -> bool:
         dc = True
-        dp = False
         if self.donchianfilterenabled:
             dc = self.close <= self.entry_donchian[1]
 
-        if self.dpfilterenabled:
-            dp = self.dumpump
+        dp = self.dumpump if self.dpfilterenabled else False
         return utils.crossed(self.fast_ema, self.slow_ema, direction='below',
                              sequential=False) and not dp and dc and self.enableshort
 

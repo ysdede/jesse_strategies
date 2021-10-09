@@ -16,10 +16,7 @@ aave_low = aave_candles[:, 4]
 aave_volume = aave_candles[:, 5]
 
 # convect timestamps into a format that is supported for plotting
-times = []
-for c in aave_candles:
-    times.append(datetime.datetime.fromtimestamp(c[0] / 1000))
-
+times = [datetime.datetime.fromtimestamp(c[0] / 1000) for c in aave_candles]
 candlestick = go.Candlestick(
                             x=times,
                             open=aave_open,

@@ -145,11 +145,11 @@ class ewoexitsharpe(Strategy):
 
     @property
     def positionsize(self):
-        if self.bl.sharpe_enabled:
-            print('\n', self.shared_vars[self.symbol]['MyShare'], '---------------------------------------')
-            return self.shared_vars[self.symbol]['MyShare'] * (self.capital / (self.shared_vars['Shares'] * 4))
-        else:
+        if not self.bl.sharpe_enabled:
             return self.capital / (10 * len(get_all_trading_routes()))
+
+        print('\n', self.shared_vars[self.symbol]['MyShare'], '---------------------------------------')
+        return self.shared_vars[self.symbol]['MyShare'] * (self.capital / (self.shared_vars['Shares'] * 4))
 
     def go_long(self):
         sl = self.stop
@@ -168,9 +168,6 @@ class ewoexitsharpe(Strategy):
         self.exit_counter = 0
 
     def update_position(self):
-        if self.position.pnl_percentage / self.position.leverage > 40:
-            pass  # self.liquidate()
-
         if self.is_long and utils.crossed(self.exit_fast_ema, self.exit_slow_ema, direction='below', sequential=False):
             self.liquidate()
 

@@ -76,10 +76,8 @@ class balancer:
         ts = datetime.datetime.utcfromtimestamp(epoch).strftime('%d/%m/%Y')
 
         if symbol == self.pairs[0]:  # Use first symbol in routes.py file as "master"
-            sharpes = []
+            sharpes = [shared_vars[sym]['Sharpe'] for sym in self.pairs]
 
-            for sym in self.pairs:
-                sharpes.append(shared_vars[sym]['Sharpe'])
             # print('\n SHARPES', sharpes)
 
             # Calculate avg. Sharpe
@@ -168,11 +166,7 @@ class balancer:
                 for sym in self.pairs:
                     csv_header.append(f'{sym} Share')
 
-                if self.sharpe_enabled:
-                    mark = 'Sharpe'
-                else:
-                    mark = 'noSharpe'
-
+                mark = 'Sharpe' if self.sharpe_enabled else 'noSharpe'
                 self.create_report(self.results,
                                    f'{self.sharpe_scaler}x {self.period}D {now}-{mark}.csv'.replace('/', '-'))
 
@@ -180,10 +174,8 @@ class balancer:
         # self.shared_vars['Shares']}")
 
     def create_report(self, _res, _fname):
-        # Create csv report
-        f = open(_fname, 'w')
-        f.write(str(self.header1).replace('[', '').replace(']', '').replace(' ', '') + '\n')
-        for srline in _res:
-            f.write(str(srline).replace('[', '').replace(']', '').replace(' ', '') + '\n')
-        os.fsync(f.fileno())
-        f.close()
+        with open(_fname, 'w') as f:
+            f.write(str(self.header1).replace('[', '').replace(']', '').replace(' ', '') + '\n')
+            for srline in _res:
+                f.write(str(srline).replace('[', '').replace(']', '').replace(' ', '') + '\n')
+            os.fsync(f.fileno())

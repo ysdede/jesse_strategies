@@ -108,18 +108,17 @@ class wtewohp2chophp1(Strategy):
 
     @property
     def wt_crossed(self):
-        cr = utils.crossed(self.wt.wt1, self.wt.wt2, direction=None, sequential=False)
-        return cr
+        return utils.crossed(
+            self.wt.wt1, self.wt.wt2, direction=None, sequential=False
+        )
 
     @property
     def wt_cross_up(self):
-        up = self.wt.wt2[-1] - self.wt.wt1[-1] <= 0
-        return up
+        return self.wt.wt2[-1] - self.wt.wt1[-1] <= 0
 
     @property
     def wt_cross_down(self):
-        dw = self.wt.wt2[-1] - self.wt.wt1[-1] >= 0
-        return dw
+        return self.wt.wt2[-1] - self.wt.wt1[-1] >= 0
 
     @property
     def wt_oversold(self):
@@ -150,16 +149,12 @@ class wtewohp2chophp1(Strategy):
         return multibardildo or self.isdildo(-1) or self.isdildo(-2) or self.isdildo(-3)  # or self.isdildo(-4)
 
     def should_long(self) -> bool:
-        cap = True
-        if self.chopfilter:
-            cap = self.chop[-1] > self.hp['chop_upper_limit']
+        cap = self.chop[-1] > self.hp['chop_upper_limit'] if self.chopfilter else True
         return utils.crossed(self.fast_ema, self.slow_ema, direction='above',
                              sequential=False) and not self.dumpump and cap and self.close > self.dema[-1]
 
     def should_short(self) -> bool:
-        cap = True
-        if self.chopfilter:
-            cap = self.chop[-1] < self.hp['chop_lower_limit']
+        cap = self.chop[-1] < self.hp['chop_lower_limit'] if self.chopfilter else True
         return utils.crossed(self.fast_ema, self.slow_ema, direction='below',
                              sequential=False) and not self.dumpump and cap and self.close < self.dema[-1]
 
@@ -241,17 +236,16 @@ class wtewohp2chophp1(Strategy):
         minute = datetime.datetime.utcfromtimestamp(epoch).strftime('%M')
         # print(f'{self.symbol};{ts};{round(sharpe, 2)};{round(calmar, 2)}')
 
-        if hour == '00' and minute == '00':
-            if self.metrics:
-                sharpe = float(self.metrics['sharpe_ratio'])
-                calmar = float(self.metrics['calmar_ratio'])
-                winrate = float(self.metrics['win_rate'])
-                total = self.metrics['total']
+        if hour == '00' and minute == '00' and self.metrics:
+            sharpe = float(self.metrics['sharpe_ratio'])
+            calmar = float(self.metrics['calmar_ratio'])
+            winrate = float(self.metrics['win_rate'])
+            total = self.metrics['total']
 
-                if not np.isnan(sharpe):
-                    self.shared_vars[self.symbol]['Sharpe'] = sharpe
-                    self.shared_vars[self.symbol]['Calmar'] = calmar
-                    self.shared_vars[self.symbol]['Total'] = total
-                    self.shared_vars[self.symbol]['WinRate'] = winrate
+            if not np.isnan(sharpe):
+                self.shared_vars[self.symbol]['Sharpe'] = sharpe
+                self.shared_vars[self.symbol]['Calmar'] = calmar
+                self.shared_vars[self.symbol]['Total'] = total
+                self.shared_vars[self.symbol]['WinRate'] = winrate
 
             # print(f"\nI'm {self.symbol}, MyShare is {self.shared_vars[self.symbol]['MyShare']}. Total Share is {self.shared_vars['Shares']}")

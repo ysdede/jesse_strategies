@@ -120,9 +120,11 @@ class emacounter(Strategy):
     @property
     @cached
     def positionsize(self):
-        if len(get_all_trading_routes()) < 3:
-            return 10 * len(get_all_trading_routes())
-        elif self.symbol.startswith('ETH-'):
+        if (
+            len(get_all_trading_routes()) < 3
+            or len(get_all_trading_routes()) >= 3
+            and self.symbol.startswith('ETH-')
+        ):
             return 10 * len(get_all_trading_routes())
         else:
             return 16 * len(get_all_trading_routes())
@@ -159,11 +161,7 @@ class emacounter(Strategy):
         return multibardildo or self.isdildo(-1) or self.isdildo(-2) or self.isdildo(-3)
 
     def should_long(self) -> bool:
-        dp = False
-
-        if self.dpfilterenabled:
-            dp = self.dumpump
-
+        dp = self.dumpump if self.dpfilterenabled else False
         if utils.crossed(self.fast_ema, self.slow_ema, direction='above', sequential=False):
             self.long_start = self.candles[:, 0][-1]
             self.trend_long = True
@@ -175,10 +173,6 @@ class emacounter(Strategy):
 
         if self.trend_long and self.candles[:, 0][-1] != self.long_start and self.fast_ema[-1] > self.slow_ema[-1]:
             self.green_count += 1
-        if False and self.long_start:
-            print('\nLong start', jh.timestamp_to_time(self.long_start), '-->',
-                  jh.timestamp_to_time(self.candles[:, 0][-1]), 'Trend long', self.trend_long, 'Trend short', self.trend_short, 'greens:',
-                  self.green_count, 'reds:', self.red_count,  ' | L/S', self.is_long, self.is_short)
         if self.trend_long and self.trend_short:
             print('LONG & SHORT!')
 
@@ -196,11 +190,6 @@ class emacounter(Strategy):
 
         if self.trend_short and self.candles[:, 0][-1] != self.short_start and self.fast_ema[-1] < self.slow_ema[-1]:
             self.red_count += 1
-        if False and self.short_start:
-            print('\nShort start', jh.timestamp_to_time(self.short_start), '-->',
-                  jh.timestamp_to_time(self.candles[:, 0][-1]), 'Trend short:', self.trend_short, ' | Trend Long:',
-                  self.trend_long, 'reds:', self.red_count, 'greens:', self.green_count, ' | L/S', self.is_long, self.is_short)
-
         return self.trend_short and self.red_count > 1
 
     @property

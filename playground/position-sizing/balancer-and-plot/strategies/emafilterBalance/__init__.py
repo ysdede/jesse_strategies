@@ -164,23 +164,19 @@ class emafilterBalance(Strategy):
 
     def should_long(self) -> bool:
         dc = True
-        dp = False
         if self.donchianfilterenabled:
             dc = self.close >= self.entry_donchian[1]
 
-        if self.dpfilterenabled:
-            dp = self.dumpump
+        dp = self.dumpump if self.dpfilterenabled else False
         return utils.crossed(self.fast_ema, self.slow_ema, direction='above',
                              sequential=False) and not dp and dc and self.enablelong
 
     def should_short(self) -> bool:
         dc = True
-        dp = False
         if self.donchianfilterenabled:
             dc = self.close <= self.entry_donchian[1]
 
-        if self.dpfilterenabled:
-            dp = self.dumpump
+        dp = self.dumpump if self.dpfilterenabled else False
         return utils.crossed(self.fast_ema, self.slow_ema, direction='below',
                              sequential=False) and not dp and dc and self.enableshort
 
@@ -302,33 +298,34 @@ class emafilterBalance(Strategy):
 
     def call_balancer(self):
         # Update stats everyday
-        if self.bl.tick(self.current_candle):
-            sharpe = self.bl.get_sharpe(self.metrics)
-            if sharpe:
-                self.shared_vars[self.symbol]['Sharpe'] = sharpe
-                # self.bl.get_sharpe(self.current_candle, self.metrics)
-                self.bl.stats(self.symbol, self.shared_vars, self.current_candle)
+        if not self.bl.tick(self.current_candle):
+            return
+        sharpe = self.bl.get_sharpe(self.metrics)
+        if sharpe:
+            self.shared_vars[self.symbol]['Sharpe'] = sharpe
+            # self.bl.get_sharpe(self.current_candle, self.metrics)
+            self.bl.stats(self.symbol, self.shared_vars, self.current_candle)
 
-            # Update My Share and total shares
-            if self.balancer_enabled:
-                epoch = self.current_candle[0] / 1000
-                # hour = datetime.datetime.utcfromtimestamp(epoch).strftime('%H')
-                # minute = datetime.datetime.utcfromtimestamp(epoch).strftime('%M')
-                day = datetime.datetime.utcfromtimestamp(epoch).strftime('%d')
+        # Update My Share and total shares
+        if self.balancer_enabled:
+            epoch = self.current_candle[0] / 1000
+            # hour = datetime.datetime.utcfromtimestamp(epoch).strftime('%H')
+            # minute = datetime.datetime.utcfromtimestamp(epoch).strftime('%M')
+            day = datetime.datetime.utcfromtimestamp(epoch).strftime('%d')
 
-                # Rebalance shares every every nth day.
-                if int(day) % self.period == 0:  # and hour == minute == '00':
+            # Rebalance shares every every nth day.
+            if int(day) % self.period == 0:  # and hour == minute == '00':
 
-                    # Get total shares
-                    bl_shares = self.bl.shares
-                    if bl_shares:
-                        self.shares = self.shared_vars['Shares'] = bl_shares
+                # Get total shares
+                bl_shares = self.bl.shares
+                if bl_shares:
+                    self.shares = self.shared_vars['Shares'] = bl_shares
 
-                    # Get normalized deviations aka My Share
-                    bl_norm_dev = self.bl.normalized_deviations
-                    if bl_norm_dev:
-                        for i, sym in enumerate(self.bl.pairs):
-                            self.my_share = self.shared_vars[sym]['MyShare'] = bl_norm_dev[i]
+                # Get normalized deviations aka My Share
+                bl_norm_dev = self.bl.normalized_deviations
+                if bl_norm_dev:
+                    for i, sym in enumerate(self.bl.pairs):
+                        self.my_share = self.shared_vars[sym]['MyShare'] = bl_norm_dev[i]
 
     def should_cancel(self) -> bool:
         return True
