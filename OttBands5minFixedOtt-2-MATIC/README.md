@@ -329,7 +329,7 @@ MATIC-USDT 5m    2021-07-04   2021-07-24   10     2.17         -7.04    50      
 MATIC-USDT 5m    2021-09-20   2021-10-10   10     0.74         -3.8     26         30       0.94     6.79         2        3        341          -165         3          7          2.77
 ```
 
-and it will create a csv file located at
+and it will create a csv file located at  
 `jessetkdata/results/Random-Binance Futures-MATIC-USDT-5m-2021-05-01-2021-10-15-20211016 172631--20211016 172631.csv`
 
 It's trained for last 50 days but surprisingly performs well at May, June 2021.
