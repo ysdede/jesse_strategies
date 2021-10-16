@@ -44,7 +44,7 @@ OTT bandwidth parameter. It's used by dividing it by 10_000
 I need to visualize the bands to make it clear.  
 White lines are OTT bands. They are symmetric in this case. It's possible to use distinct bandwidth values.  
 But it will cause bias, optimization will fit to market cycle, eg it will pick a smaller filter value for upper band in a bull run.  
-And strategy will almost work _long only_. (Yes, I've tested it) It can be useful if used correctly and optimized frequently.  
+And strategy will almost work **long only**. (Yes, I've tested it) It can be useful if used correctly and optimized frequently.  
 Blue line is MAvg, ma line of OTT and purple one is OTT signal itself. Upper and lower bands calculated by multipling   
 OTT signal by ott_bw value.
 
@@ -114,7 +114,7 @@ Tp level    Qty
 ```
 
 ### max_risk
-If determined margin risk for calculated stoploss is greater than _max_risk_ don't trade. Yeah, don't trade :)  
+If determined margin risk for calculated stoploss is greater than **max_risk** don't trade. Yeah, don't trade :)  
 It can be replaced with [risk-to-qty](https://docs.jesse.trade/docs/utils.html#risk-to-qty)  
 
 
