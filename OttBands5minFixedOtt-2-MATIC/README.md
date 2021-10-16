@@ -265,7 +265,7 @@ NeKU2        39     54    46     19.98        -8.87    557.85     51       2.96 
 NeK*2        38     53    47     24.12        -9.7     589.53     47       2.86     5.16     60.78    4        5        498          -267         18         20       327.83   -5.15
 
 ```
-I liked `NeK+*`, added it to routes and performed and random backtest
+I liked `NeK+*`, added it to routes and performed a random backtest
 
 ```python
 routes = [
