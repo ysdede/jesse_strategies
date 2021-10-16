@@ -59,8 +59,8 @@ Blue line is MAvg, ma line of OTT and purple one is OTT signal itself. Upper and
 OTT signal by ott_bw value.
 
 As seen on the image above bands help to filter small movements in sideways markets.  
-Strategy will long or short only if the MAvg crosses upper/lower bands. And it will exit position when the MAV signal crosses  
-OTT (middle) signal. 
+Strategy will long or short only if the MAvg crosses upper/lower bands. And it will exit position when the MAvg signal crosses  
+the OTT (middle) signal. 
 
 This is the exit position condition:  
 ```python
