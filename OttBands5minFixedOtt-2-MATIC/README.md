@@ -1,4 +1,4 @@
-### What's new?
+## OttBands 5min  
 
 Trained between 2021-07-07 and 2021-10-15  
 Training and testing periods are swapped and split changed to %50 - %50    
