@@ -61,7 +61,7 @@ This is the exit position condition:
             self.liquidate()
 ```
 `self.cross_down` and `self.cross_up` checks for MAvg\~OTT crosses.  
-There is commented out lines `self.cross_down_upper_band` and `self.cross_down_upper_band`    
+There are commented out lines `self.cross_down_upper_band` and `self.cross_down_upper_band`    
 If these are used instead of MAvg\~OTT cross, strategy will make more trades.  
 Anyways you can test them with different parameters.  
 
@@ -72,7 +72,7 @@ Anyways you can test them with different parameters.
 
 Qty index determined by `tps_qty_index` parameter.    
 
-Take profit levels predetermined by a list:  
+Take profit levels are predetermined by a list:  
 ```python
 self.fib = (0.005, 0.01, 0.02, 0.04, 0.08)
 ```
@@ -147,7 +147,7 @@ it will not enter trades or open more trades.
 
 Yeah this is odd.
 
-You can find optimization files under `storage/genetics`, chosen dnas under `jessetkdata/dnafiles` eg:
+You can find optimization files under `storage/genetics`, chosen dnas under `jessetkdata/dnafiles` eg:  
 `jessetkdata/dnafiles/MATIC-USDT 2021-09-01 2021-10-15.py`
 
 ```python
@@ -265,7 +265,7 @@ NeKU2        39     54    46     19.98        -8.87    557.85     51       2.96 
 NeK*2        38     53    47     24.12        -9.7     589.53     47       2.86     5.16     60.78    4        5        498          -267         18         20       327.83   -5.15
 
 ```
-I liked `NeK+*`, addes it to routes and performed and random backtest
+I liked `NeK+*`, added it to routes and performed and random backtest
 
 ```python
 routes = [
