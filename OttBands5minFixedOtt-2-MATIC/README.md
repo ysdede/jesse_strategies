@@ -1,4 +1,4 @@
-## OttBands 5min  
+# OttBands 5min  
 
 Trained between 2021-07-07 and 2021-10-15  
 Training and testing periods are swapped and split changed to %50 - %50    
@@ -18,10 +18,12 @@ Be careful when changing leverage and position size.
             {'name': 'tps_qty_index', 'type': int, 'min': 0, 'max': 125, 'default': 79},
             {'name': 'max_risk', 'type': int, 'min': 20, 'max': 70, 'default': 27},
         ]
-```
+```  
+
 ### ott_len
 This is the ma length of OTT indicator (ma is Kaufman Moving Average in this case)  
-
+  
+  
 ### ott_percent  
 This is the percent parameter for the OTT indicator. Hyperopt parameter is divided by 100 to get more precision.  
 244 = 2.44  
@@ -31,6 +33,8 @@ This is the percent parameter for the OTT indicator. Hyperopt parameter is divid
     def ott_percent(self):
         return self.hp['ott_percent'] / 100
 ```
+  
+  
 ### ott_bw
 OTT bandwidth parameter. It's used by dividing it by 10_000  
 
@@ -43,13 +47,18 @@ OTT bandwidth parameter. It's used by dividing it by 10_000
 ```
 
 I need to visualize the bands to make it clear.  
+  
+  
+
+<img src="https://s3.tradingview.com/snapshots/i/i6Z1cCky.png" width=100% height=100%>  
+
 White lines are OTT bands. They are symmetric in this case. It's possible to use distinct bandwidth values.  
 But it will cause bias, optimization will fit to market cycle, eg it will pick a smaller filter value for upper band in a bull run.  
 And strategy will almost work **long only**. (Yes, I've tested it) It can be useful if used correctly and optimized frequently.  
-Blue line is MAvg, ma line of OTT and purple one is OTT signal itself. Upper and lower bands calculated by multipling   
+Blue line is MAvg, ma line of OTT and purple one is OTT signal itself. Upper and lower bands calculated by multiplying   
 OTT signal by ott_bw value.
 
-As seen on the image below bands help to filter small movements in sideways markets.  
+As seen on the image above bands help to filter small movements in sideways markets.  
 Strategy will long or short only if the MAvg crosses upper/lower bands. And it will exit position when the MAV signal crosses  
 OTT (middle) signal. 
 
@@ -61,14 +70,14 @@ This is the exit position condition:
         if self.is_short and self.cross_up:  # self.cross_up_lower_band:
             self.liquidate()
 ```
+  
+  
 `self.cross_down` and `self.cross_up` checks for MAvg\~OTT crosses.  
 There are commented out lines `self.cross_down_upper_band` and `self.cross_down_upper_band`    
 If these are used instead of MAvg\~OTT cross, strategy will make more trades.  
 Anyways you can test them with different parameters.  
-
-<img src="https://s3.tradingview.com/snapshots/i/i6Z1cCky.png" width=100% height=100%>  
-
-
+  
+  
 ### tps_qty_index  
 
 Qty index determined by `tps_qty_index` parameter.    
@@ -113,7 +122,8 @@ Tp level    Qty
 4%          40%  
 8%          30%  
 ```
-
+  
+  
 ### max_risk
 If determined margin risk for calculated stoploss is greater than **max_risk** don't trade. Yes, don't trade.  
 It can be replaced with [risk-to-qty](https://docs.jesse.trade/docs/utils.html#risk-to-qty)  
@@ -126,7 +136,7 @@ Stoploss is current OTT Signal:
     def calc_long_stop(self):
         return self.ott.ott[-1]
 ```
-
+  
 
 Risk for trade is calculated by method(s) below.  
 ```python
@@ -143,13 +153,16 @@ def calc_risk_for_long(self):
         else:
             return True
 ```
+  
+  
 It's stricly bound to max_risk hyperparameter and leverage and position size. If the conditions are not met
 it will not enter trades or open more trades.
 
-Yeah this is odd.
+Yeah this is odd.  
+
 
 You can find optimization files under `storage/genetics`, chosen dnas under `jessetkdata/dnafiles` eg:  
-`jessetkdata/dnafiles/MATIC-USDT 2021-09-01 2021-10-15.py`
+`jessetkdata/dnafiles/MATIC-USDT 2021-09-01 2021-10-15.py`  
 
 ```python
 dnas = [
@@ -181,13 +194,17 @@ dnas = [
 ['NeK,2', 46, 47, 18.25, 48, 37, 23.27, {'ott_len': 27, 'ott_percent': 304, 'ott_bw': 113, 'tps_qty_index': 6, 'max_risk': 26}],
 ]
 ```
-
+  
+  
 to test the dnas against to a specific time period run:
 
 ```Console
 jesse-tk refine "jessetkdata/dnafiles/MATIC-USDT 2021-10-01 2021-10-15.py" 2021-09-01 2021-10-15
 ```
-(jesse-tk is rewrite version of ex-jesse-picker, anyways you can use old tool)
+  
+  
+(jesse-tk is rewrite version of ex-jesse-picker, anyways you can use old tool)  
+
 
 ```Console
 47/51   eta: 00:00:36 | MATIC-USDT | 5m | 2021-10-01 -> 2021-10-15
@@ -224,12 +241,14 @@ JY>N)        17     53    47     7.12         -4.63    683.18     47       1.78 
 Prh5M        14     57    43     7.71         -8.38    603.98     50       1.42     3.39     72.04    3        3        491          -332         7          7        117.57   12.29
 teR+2        12     58    42     6.07         -4.92    394.76     50       1.29     3.57     80.29    2        3        353          -286         6          6        100.47   12.29
 ```
-
+  
+  
 Another test with different period
 ```Console
 jesse-tk refine "jessetkdata/dnafiles/MATIC-USDT 2021-09-01 2021-10-15.py" 2021-09-01 2021-10-15
 ```
-
+  
+  
 ```Console
 51/51   eta: 00:00:00 | MATIC-USDT | 5m | 2021-09-01 -> 2021-10-15
 Dna          Total  Longs Shorts Total Net    Max.     Annual     Win      Serenity Sharpe   Calmar   Winning  Losing   Largest      Largest      Winning    Losing   Paid     Market
@@ -266,7 +285,10 @@ NeKU2        39     54    46     19.98        -8.87    557.85     51       2.96 
 NeK*2        38     53    47     24.12        -9.7     589.53     47       2.86     5.16     60.78    4        5        498          -267         18         20       327.83   -5.15
 
 ```
-I liked `NeK+*`, added it to routes and performed a random backtest
+  
+  
+I liked `NeK+*`, added it to routes and performed a random backtest  
+
 
 ```python
 routes = [
@@ -278,11 +300,15 @@ routes = [
 extra_candles = []
 
 ```
-
+  
+  
 ```console
 jesse-tk random 2021-05-01 2021-10-15 50 20
 ```
-Console output is
+  
+  
+Console output is  
+
 
 ```Console
 50/50   Remaining Time: 00:00:00
@@ -329,8 +355,10 @@ MATIC-USDT 5m    2021-06-28   2021-07-18   13     2.69         -7.04    66      
 MATIC-USDT 5m    2021-07-04   2021-07-24   10     2.17         -7.04    50         40       1.37     7.14         2        4        343          -204         4          6          -15.05
 MATIC-USDT 5m    2021-09-20   2021-10-10   10     0.74         -3.8     26         30       0.94     6.79         2        3        341          -165         3          7          2.77
 ```
-
+  
+  
 and it will create a csv file located at  
 `jessetkdata/results/Random-Binance Futures-MATIC-USDT-5m-2021-05-01-2021-10-15-20211016 172631--20211016 172631.csv`
-
+  
+  
 It's trained for last 50 days but surprisingly performs well at May, June 2021.
