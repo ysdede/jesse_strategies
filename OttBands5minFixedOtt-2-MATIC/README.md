@@ -115,7 +115,7 @@ Tp level    Qty
 ```
 
 ### max_risk
-If determined margin risk for calculated stoploss is greater than **max_risk** don't trade. Yeah, don't trade :)  
+If determined margin risk for calculated stoploss is greater than **max_risk** don't trade. Yes, don't trade.  
 It can be replaced with [risk-to-qty](https://docs.jesse.trade/docs/utils.html#risk-to-qty)  
 
 
