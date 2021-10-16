@@ -10,10 +10,10 @@ import custom_indicators as cta
 # Stoploss is still same.
 
 
-class Ott2butKAMA2609(Strategy):
+class OttKamaRm(Strategy):
     def __init__(self):
         super().__init__()
-        self.trade_ts = None
+        self.max_risk = 3.0
 
     def hyperparameters(self):
         return [
@@ -65,16 +65,38 @@ class Ott2butKAMA2609(Strategy):
     def chop_lower_band(self):
         return 60 - (self.hp['chop_bandwidth'] / 10)
 
-    def should_long(self) -> bool:
-        return self.cross_up and self.chop[-1] > self.chop_upper_band
+    # //
+    @property
+    @cached
+    def calc_risk_for_long(self):
+        sl = self.calc_long_stop
 
-    def should_short(self) -> bool:
-        return self.cross_down and self.chop[-1] < self.chop_lower_band
+        margin_size = self.pos_size_in_usd * self.leverage
+        margin_risk = margin_size * ((self.close - sl) / self.close)
+
+        if (margin_risk / self.capital * 100) > self.max_risk:
+            print(
+                f'\nMargin Risk: {round(margin_risk)} | Capital: {round(self.capital)} | Risk % {round(margin_risk / self.capital * 100, 2)} | Price {self.close} | Stop price: {round(sl, 4)} | Stop diff: {round(self.close - sl, 4)} | Stoploss % {round((self.close - sl) / self.close * 100, 2)}')
+            return False
+        else:
+            return True
+
+    @property
+    @cached
+    def pos_size_in_usd(self):
+        return self.capital / (len(get_all_trading_routes()) * 3)
 
     @property
     @cached
     def pos_size(self):
-        return (utils.size_to_qty((self.capital / (len(get_all_trading_routes()) * 3)), self.price, fee_rate=self.fee_rate) * self.leverage) + 0.001
+        return utils.size_to_qty(self.pos_size_in_usd, self.price, fee_rate=self.fee_rate) * self.leverage
+    # //
+
+    def should_long(self) -> bool:
+        return self.cross_up and self.chop[-1] > self.chop_upper_band and self.calc_risk_for_long
+
+    def should_short(self) -> bool:
+        return False  # self.cross_down and self.chop[-1] < self.chop_lower_band
 
     def go_long(self):
         self.buy = self.pos_size, self.price
@@ -82,15 +104,25 @@ class Ott2butKAMA2609(Strategy):
     def go_short(self):
         self.sell = self.pos_size, self.price
 
+    @property
+    @cached
+    def calc_long_stop(self):
+        return self.ott.ott[-1] - (self.ott.ott[-1] * self.stop)
+
+    @property
+    @cached
+    def calc_short_stop(self):
+        return self.ott.ott[-1] + (self.ott.ott[-1] * self.stop)
+
     def on_open_position(self, order):
         if self.is_long:
-            sl = self.ott.ott[-1] - (self.ott.ott[-1] * self.stop)
+            sl = self.calc_long_stop  # self.ott.ott[-1] - (self.ott.ott[-1] * self.stop)
             self.stop_loss = self.position.qty, sl
             tp = self.position.entry_price + (self.position.entry_price * (self.stop * self.RRR))
             self.take_profit = self.position.qty, tp
 
         if self.is_short:
-            sl = self.ott.ott[-1] + (self.ott.ott[-1] * self.stop)
+            sl = self.calc_short_stop  # self.ott.ott[-1] + (self.ott.ott[-1] * self.stop)
             self.stop_loss = self.position.qty, sl
             tp = self.position.entry_price - (self.position.entry_price * (self.stop * self.RRR))
             self.take_profit = self.position.qty, tp

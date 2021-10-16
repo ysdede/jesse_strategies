@@ -10,7 +10,7 @@ import custom_indicators as cta
 # Stoploss is still same.
 
 
-class Ott2butKAMA(Strategy):
+class Ott2butKAMA2609(Strategy):
     def __init__(self):
         super().__init__()
         self.trade_ts = None
@@ -38,12 +38,12 @@ class Ott2butKAMA(Strategy):
     @property
     @cached
     def stop(self):
-        return self.hp['stop_loss'] / 10000  # 122 / 10000  #
+        return self.hp['stop_loss'] / 10000
 
     @property
     @cached
     def RRR(self):
-        return self.hp['risk_reward'] / 10  # 40 / 10
+        return self.hp['risk_reward'] / 10
 
     @property
     @cached
@@ -54,8 +54,6 @@ class Ott2butKAMA(Strategy):
     @cached
     def chop(self):
         return talib.RSI(self.candles[-960:, 2], self.hp['chop_rsi_len'])
-        # return jta.rsi(self.candles[-240:, 2], self.hp['chop_rsi_len'], sequential=True)
-        # return cta.cae(self.candles[-240:, 2], self.hp['chop_rsi_len'], sequential=True)
 
     @property
     @cached
@@ -80,11 +78,9 @@ class Ott2butKAMA(Strategy):
 
     def go_long(self):
         self.buy = self.pos_size, self.price
-        # self.trade_ts = self.candles[:, 0][-1]
 
     def go_short(self):
         self.sell = self.pos_size, self.price
-        # self.trade_ts = self.candles[:, 0][-1]
 
     def on_open_position(self, order):
         if self.is_long:
