@@ -1,10 +1,133 @@
-Trained between 2021-07-07 and 2021-10-15
-Training and testing periods are swapped and split changed to %50 - %50
-Training period is last 50 days as this day, 2021-10-15.
+### What's new?
 
-Be careful when changing leverage and position size.
+Trained between 2021-07-07 and 2021-10-15  
+Training and testing periods are swapped and split changed to %50 - %50    
+Training period is last 50 days as this day, 2021-10-15.  
 
-Risk for trade is calculated by method(s) below. 
+Be careful when changing leverage and position size.  
+
+## Hyperparameters
+
+```python
+    def hyperparameters(self):
+        return [
+            {'name': 'ott_len', 'type': int, 'min': 5, 'max': 50, 'default': 31},
+            {'name': 'ott_percent', 'type': int, 'min': 150, 'max': 350, 'default': 244},
+            {'name': 'ott_bw', 'type': int, 'min': 60, 'max': 180, 'default': 119},
+            {'name': 'tps_qty_index', 'type': int, 'min': 0, 'max': 125, 'default': 79},
+            {'name': 'max_risk', 'type': int, 'min': 20, 'max': 70, 'default': 27},
+        ]
+```
+### ott_len
+This is the ma length of OTT indicator (ma is Kaufman Moving Average in this case)  
+
+### ott_percent  
+This is the percent parameter for the OTT indicator. Hyperopt parameter is divided by 100 to get more precision.  
+244 = 2.44  
+```python
+    @property
+    @cached
+    def ott_percent(self):
+        return self.hp['ott_percent'] / 100
+```
+### ott_bw
+OTT bandwidth parameter. It's used by dividing it by 10_000  
+
+```python
+    @property
+    @cached
+    def ott_upper_band(self):
+        multiplier = 1 + (self.hp['ott_bw'] / 10000)
+        return np.multiply(self.ott.ott, multiplier)
+```
+
+I need to visualize the bands to make it clear.  
+White lines are OTT bands. They are symmetric in this case. It's possible to use distinct bandwidth values.  
+But it will cause bias, optimization will fit to market cycle, eg it will pick a smaller filter value for upper band in a bull run.  
+And strategy will almost work _long only_. (Yes, I've tested it) It can be useful if used correctly and optimized frequently.  
+Blue line is MAvg, ma line of OTT and purple one is OTT signal itself. Upper and lower bands calculated by multipling   
+OTT signal by ott_bw value.
+
+As seen on the image below bands help to filter small movements in sideways markets.  
+Strategy will long or short only if the MAvg crosses upper/lower bands. And it will exit position when the MAV signal crosses  
+OTT (middle) signal. 
+
+This is the exit position condition:  
+```python
+    def update_position(self):
+        if self.is_long and self.cross_down:  # self.cross_down_upper_band:
+            self.liquidate()
+        if self.is_short and self.cross_up:  # self.cross_up_lower_band:
+            self.liquidate()
+```
+`self.cross_down` and `self.cross_up` checks for MAvg~OTT crosses.  
+There is commented out lines `self.cross_down_upper_band` and `self.cross_down_upper_band`    
+If these are used instead of MAvg~OTT cross, strategy will make more trades.  
+Anyways you can test them with different parameters.  
+
+<img src="https://s3.tradingview.com/snapshots/i/i6Z1cCky.png" width=100% height=100%>  
+
+
+### tps_qty_index  
+
+Qty index determined by `tps_qty_index` parameter.    
+
+Take profit levels predetermined by a list:  
+```python
+self.fib = (0.005, 0.01, 0.02, 0.04, 0.08)
+```
+At first it was a fibonacci series but modified after some tests and the name (self.fib) remained the same.  
+
+Multipy fib number with 100 to find out take profit levels:  
+0.005 = 0.5%  
+0.04 = 4%  
+
+It makes easier to calculate percentages.  
+
+Quantities for take profit levels are picked from a list by a optimized tuple index.  
+Tuples are located under `vars.py`  
+
+```python
+tp_qtys = (  # len = 126
+    (1, 1, 1, 1, 6),
+    (1, 1, 1, 2, 5),
+    (1, 1, 1, 3, 4),
+    (1, 1, 1, 4, 3),
+    # .
+    # ..
+    (5, 1, 1, 2, 1),
+    (5, 1, 2, 1, 1),
+    (5, 2, 1, 1, 1),
+    (6, 1, 1, 1, 1)
+)
+```
+Every step multiplied by 10%, eg (1, 1, 1, 4, 3) = 10%, 10%, 10%, 40%, 30%  
+so qtys for profit levels are:  
+
+```console
+Tp level    Qty  
+0.5%        10%  
+1%          10%  
+2%          10%  
+4%          40%  
+8%          30%  
+```
+
+### max_risk
+If determined margin risk for calculated stoploss is greater than _max_risk_ don't trade. Yeah, don't trade :)  
+It can be replaced with [risk-to-qty](https://docs.jesse.trade/docs/utils.html#risk-to-qty)  
+
+
+Stoploss is current OTT Signal:  
+```python
+    @property
+    @cached
+    def calc_long_stop(self):
+        return self.ott.ott[-1]
+```
+
+
+Risk for trade is calculated by method(s) below.  
 ```python
 def calc_risk_for_long(self):
         sl = self.calc_long_stop
