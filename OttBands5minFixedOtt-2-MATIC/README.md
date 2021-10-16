@@ -60,9 +60,9 @@ This is the exit position condition:
         if self.is_short and self.cross_up:  # self.cross_up_lower_band:
             self.liquidate()
 ```
-`self.cross_down` and `self.cross_up` checks for MAvg~OTT crosses.  
+`self.cross_down` and `self.cross_up` checks for MAvg\~OTT crosses.  
 There is commented out lines `self.cross_down_upper_band` and `self.cross_down_upper_band`    
-If these are used instead of MAvg~OTT cross, strategy will make more trades.  
+If these are used instead of MAvg\~OTT cross, strategy will make more trades.  
 Anyways you can test them with different parameters.  
 
 <img src="https://s3.tradingview.com/snapshots/i/i6Z1cCky.png" width=100% height=100%>  
