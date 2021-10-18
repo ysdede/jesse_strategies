@@ -2,4 +2,4 @@
 
 Find spreadsheet at: jessetkdata/results/Random-OttBands5minFixed2-2020-10-15--2021-10-15-20211018-153331.ods  
 
-[OttBands5minFixedOtt-2-MATIC](https://github.com/ysdede/jesse_strategies/tree/master/OttBands5minFixedOtt-2-MATIC) for more details.  
+Visit [OttBands5minFixedOtt-2-MATIC](https://github.com/ysdede/jesse_strategies/tree/master/OttBands5minFixedOtt-2-MATIC) for more details.  
