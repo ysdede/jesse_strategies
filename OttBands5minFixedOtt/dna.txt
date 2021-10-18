@@ -1,0 +1,35 @@
+jesse optimize 2021-07-01 2021-10-09 75 --json --csv
+
+INFO        |
+-------------+--------------------------------------------------
+ Started At  |                                      3 hours ago
+ Index/Total |                                       9960/10000
+ errors/info |                                              0/0
+ Route       | Binance Futures, BTC-USDT, 5m, OttBands5minFixed
+
+
+Best DNA candidates:
+
+
+ Rank   | DNA   | Training log || Testing log
+--------+-------+--------------------------------------------------------------------------------
+ 1      | Y/Wev | win-rate: 69%, total: 23, PNL: 23.99% || win-rate: 44%, total: 9, PNL: -3.6%
+ 2      | jPhHq | win-rate: 72%, total: 22, PNL: 24.39% || win-rate: 57%, total: 7, PNL: 1.45%
+ 3      | j-NHq | win-rate: 67%, total: 37, PNL: 23.89% || win-rate: 45%, total: 11, PNL: -2.69%
+ 4      | gPiHq | win-rate: 72%, total: 22, PNL: 24.01% || win-rate: 57%, total: 7, PNL: 1.45%
+ 5      | ePiHm | win-rate: 72%, total: 22, PNL: 24.01% || win-rate: 57%, total: 7, PNL: 1.45%
+ 6      | ePiHj | win-rate: 72%, total: 22, PNL: 24.01% || win-rate: 57%, total: 7, PNL: 1.45%
+ 7      | j.NHq | win-rate: 65%, total: 38, PNL: 20.89% || win-rate: 54%, total: 11, PNL: -2.87%
+ 8      | e.NHj | win-rate: 65%, total: 38, PNL: 20.89% || win-rate: 54%, total: 11, PNL: -2.87%
+ 9      | e9NHq | win-rate: 63%, total: 46, PNL: 26.96% || win-rate: 50%, total: 12, PNL: -1.99%
+ 10     | d7NHq | win-rate: 62%, total: 45, PNL: 24.07% || win-rate: 50%, total: 12, PNL: -2.3%
+ 11     | ePhH] | win-rate: 75%, total: 20, PNL: 22.8% || win-rate: 57%, total: 7, PNL: 1.45%
+ 12     | ePgHt | win-rate: 69%, total: 23, PNL: 21.85% || win-rate: 57%, total: 7, PNL: 1.45%
+ 13     | ePgHt | win-rate: 69%, total: 23, PNL: 21.85% || win-rate: 57%, total: 7, PNL: 1.45%
+ 14     | ePgHq | win-rate: 69%, total: 23, PNL: 21.85% || win-rate: 57%, total: 7, PNL: 1.45%
+ 15     | e,NHq | win-rate: 66%, total: 36, PNL: 21.8% || win-rate: 45%, total: 11, PNL: -2.69%
+
+
+
+
+Finished 10000 iterations.
