@@ -15,14 +15,16 @@ tp_qtys = (
 ```
 
 ```console
-PS C:\jesse-projects\OttBands1min> jesse-tk pick "storage/genetics/OttBands1min-Binance Futures-BTC-USDT-1m-2021-06-01-2021-09-09.txt" pnl2 50 250
+steam@SOYO MINGW64 /c/jesse-projects/git/jesse_strategies/OttBands1min (master)
+$ jesse-tk pick "storage\genetics\OttBands1min-Binance Futures-BTC-USDT-1m-2021-06-01-2021-09-09.txt" pnl2 50 550
 Strategy name: OttBands1min Strategy Class: <class 'strategies.OttBands1min.OttBands1min'>
 Total 342 unique dnas found.
-Picked dnas count: 332
+Picked dnas count: 342
 self.dna_fn jessetkdata/dnafiles/OttBands1mindnas.py
 p: jessetkdata.dnafiles.OttBands1mindnas
-Validated dna. 332/332
+Validated dna. 342/342
 ```
+Created dna file: jessetkdata/dnafiles/OttBands1mindnas.py  
 
 ```python
 dnas = [
@@ -32,6 +34,7 @@ dnas = [
 ['qmB^', 51, 52, 20.28, 65, 29, 18.76, {'ott_len': 48, 'ott_percent': 272, 'ott_bw': 138, 'tps_qty_index': 684}],
 ['7DXP', 56, 23, 6.16, 54, 11, 18.3, {'ott_len': 11, 'ott_percent': 116, 'ott_bw': 247, 'tps_qty_index': 506}],
 ['nlF;', 66, 57, 15.92, 71, 35, 17.17, {'ott_len': 46, 'ott_percent': 268, 'ott_bw': 158, 'tps_qty_index': 241}],
+['k/9P', 46, 13, 4.17, 60, 5, 15.14, {'ott_len': 44, 'ott_percent': 37, 'ott_bw': 94, 'tps_qty_index': 506}],
+['ulH2', 50, 12, 12.38, 75, 12, 15.05, {'ott_len': 51, 'ott_percent': 268, 'ott_bw': 168, 'tps_qty_index': 127}],
 # ... more
 ```
-
