@@ -1,9 +1,8 @@
+import custom_indicators as cta
 import numpy as np
 from jesse import utils
 from jesse.services.selectors import get_all_trading_routes
 from jesse.strategies import Strategy, cached
-
-import custom_indicators as cta
 from vars import tp_qtys
 
 
@@ -11,8 +10,8 @@ class OttBands1min(Strategy):
     def __init__(self):
         super().__init__()
         # self.profit_levels = (0.01, 0.02, 0.03, 0.05, 0.08)
-        self.profit_levels = (0.005, 0.01, 0.02, 0.04, 0.08)
         # self.profit_levels = (0.01, 0.02, 0.04, 0.08, 0.16)
+        self.profit_levels = (0.005, 0.01, 0.02, 0.04, 0.08)
         self.ott_ma_type = 'kama'
 
     def hyperparameters(self):
@@ -83,7 +82,7 @@ class OttBands1min(Strategy):
     @property
     @cached
     def pos_size_in_usd(self):
-        return self.capital  / 10  # (len(get_all_trading_routes()) * 2)
+        return self.capital / 10  # (len(get_all_trading_routes()) * 2)
 
     @property
     @cached
@@ -96,10 +95,10 @@ class OttBands1min(Strategy):
         return self.ott.ott[-1]
 
     def should_long(self) -> bool:
-        return self.cross_up_upper_band  # and self.calc_risk_for_long
+        return self.cross_up_upper_band
 
     def should_short(self) -> bool:
-        return self.cross_down_lower_band  # and self.calc_risk_for_short
+        return self.cross_down_lower_band
 
     @property
     @cached
@@ -108,11 +107,9 @@ class OttBands1min(Strategy):
 
     def go_long(self):
         self.buy = self.pos_size, self.price
-        # self.trade_ts = self.candles[:, 0][-1]
 
     def go_short(self):
         self.sell = self.pos_size, self.price
-        # self.trade_ts = self.candles[:, 0][-1]
 
     def on_open_position(self, order):
         qty = self.position.qty
@@ -126,11 +123,8 @@ class OttBands1min(Strategy):
 
             for index, _qty in enumerate(qty_curve):
                 if _qty > 0:
-                    tps.append(((qty * _qty), self.position.entry_price * (1 + (self.profit_levels[index]))))
-
-            # print('\n', 'Long QTY:', qty, tps)
-
-            # self.take_profit = tps
+                    tps.append(
+                        ((qty * _qty), self.position.entry_price * (1 + (self.profit_levels[index]))))
 
         if self.is_short:
             # sl = self.calc_short_stop
@@ -138,9 +132,8 @@ class OttBands1min(Strategy):
 
             for index, _qty in enumerate(qty_curve):
                 if _qty > 0:
-                    tps.append(((qty * _qty), self.position.entry_price * (1 - (self.profit_levels[index]))))
-
-            # print('\n', 'Short QTY:', qty, tps)
+                    tps.append(
+                        ((qty * _qty), self.position.entry_price * (1 - (self.profit_levels[index]))))
 
         self.take_profit = tps
 
