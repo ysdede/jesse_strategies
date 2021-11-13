@@ -69,7 +69,7 @@ class Ott2butKAMARe3(Strategy):
         return self.cross_up and self.chop[-1] > self.chop_upper_band
 
     def should_short(self) -> bool:
-        return self.cross_down and self.chop[-1] < self.chop_lower_band
+        return False  # self.cross_down and self.chop[-1] < self.chop_lower_band
 
     @property
     @cached
