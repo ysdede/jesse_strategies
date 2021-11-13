@@ -46,7 +46,7 @@ config = {
             # accepted values are: 'cross' and 'isolated'
             'futures_leverage_mode': 'cross',
             # 1x, 2x, 10x, 50x, etc. Enter as integers
-            'futures_leverage': 5,
+            'futures_leverage': 10,
 
             'assets': [
                 {'asset': 'USDT', 'balance': 0},
@@ -68,7 +68,7 @@ config = {
             # accepted values are: 'cross' and 'isolated'
             'futures_leverage_mode': 'cross',
             # 1x, 2x, 10x, 50x, etc. Enter as integers
-            'futures_leverage': 5,
+            'futures_leverage': 10,
 
             'assets': [
                 {'asset': 'USDT', 'balance': 10_000},
@@ -92,35 +92,69 @@ config = {
             # accepted values are: 'cross' and 'isolated'
             'futures_leverage_mode': 'cross',
             # 1x, 2x, 10x, 50x, etc. Enter as integers
-            'futures_leverage': 5,
+            'futures_leverage': 10,
 
             'assets': [
                 {'asset': 'USDT', 'balance': 10_000},
             ],
         },
 
-        # https://www.ftx.com
-        'FTX': {
-            'fee': 0.0004,
+        'FTX Futures': {
+            'fee': 0.0006,
 
             # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
             'type': 'futures',
 
             # futures mode only
-            'settlement_currency': 'PERP',
+            'settlement_currency': 'USD',
             # accepted values are: 'cross' and 'isolated'
             'futures_leverage_mode': 'cross',
-            # 1x, 2x, 10x, 50x, etc. Enter as integers
-            'futures_leverage': 3,
+            # FTX only allows for 1x, 3x, 5x, 10x, 20x values
+            'futures_leverage': 10,
 
-            # used for spot exchange only
             'assets': [
-                # {'asset': 'USDT', 'balance': 1000},
-                {'asset': 'PERP', 'balance': 1000},
-                # {'asset': 'BTC', 'balance': 0},
+                {'asset': 'USD', 'balance': 10_000},
             ],
         },
 
+        'Testnet Bybit Perpetual': {
+            'fee': 0.00075,
+
+            # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
+            'type': 'futures',
+
+            # futures mode only
+            'settlement_currency': 'USDT',
+            # accepted values are: 'cross' and 'isolated'
+            'futures_leverage_mode': 'cross',
+            # 1x, 2x, 10x, 50x, etc. Enter as integers
+            'futures_leverage': 1,
+
+            'assets': [
+                {'asset': 'USDT', 'balance': 10_000},
+            ],
+        },
+
+        'Bybit Perpetual': {
+            'fee': 0.00075,
+
+            # backtest mode only: accepted are 'spot' and 'futures'
+            # 'spot' support is currently very limited - you can use 'futures' with leverage 1 for now
+            'type': 'futures',
+
+            # futures mode only
+            'settlement_currency': 'USDT',
+            # accepted values are: 'cross' and 'isolated'
+            'futures_leverage_mode': 'cross',
+            # 1x, 2x, 10x, 50x, etc. Enter as integers
+            'futures_leverage': 1,
+
+            'assets': [
+                {'asset': 'USDT', 'balance': 10_000},
+            ],
+        },
 
         # https://testnet.binancefuture.com
         'Testnet Binance Futures': {
@@ -213,7 +247,7 @@ config = {
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
     'optimization': {
         # sharpe, calmar, sortino, omega
-        'ratio': 'calmar',
+        'ratio': 'smart sortino',
     },
 
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -224,6 +258,6 @@ config = {
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
     'data': {
         # The minimum number of warmup candles that is loaded before each session.
-        'warmup_candles_num': 480,
+        'warmup_candles_num': 960,
     }
 }

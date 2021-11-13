@@ -10,7 +10,7 @@ config = {
         'postgres_name': 'jesse_db',
         'postgres_port': 5432,
         'postgres_username': 'jesse_user',
-        'postgres_password': 'password',
+        'postgres_password': 'password@€',
     },
 
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -92,7 +92,7 @@ config = {
             # accepted values are: 'cross' and 'isolated'
             'futures_leverage_mode': 'cross',
             # 1x, 2x, 10x, 50x, etc. Enter as integers
-            'futures_leverage': 20,
+            'futures_leverage': 10,
 
             'assets': [
                 {'asset': 'USDT', 'balance': 10_000},
@@ -258,6 +258,6 @@ config = {
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
     'data': {
         # The minimum number of warmup candles that is loaded before each session.
-        'warmup_candles_num': 960,
+        'warmup_candles_num': 480,
     }
 }

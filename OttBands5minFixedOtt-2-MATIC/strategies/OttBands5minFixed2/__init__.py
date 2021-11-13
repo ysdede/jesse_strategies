@@ -140,7 +140,7 @@ class OttBands5minFixed2(Strategy):
         return self.cross_up_upper_band and self.calc_risk_for_long
 
     def should_short(self) -> bool:
-        return self.cross_down_lower_band and self.calc_risk_for_short
+        return False  # self.cross_down_lower_band and self.calc_risk_for_short
 
     @property
     @cached

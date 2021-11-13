@@ -100,8 +100,8 @@ class ewoexit2708(Strategy):
         chop_filter = True
         if self.chop_filter_enabled:
             chop_filter = self.chop[-1] < 50 - (self.hp['chop_band_width'] / 10)
-        return utils.crossed(self.fast_ema, self.slow_ema, direction='below',
-                             sequential=False) and chop_filter and self.close < self.trend_ema and not self.dumpump
+        return False  # utils.crossed(self.fast_ema, self.slow_ema, direction='below',
+        #                      sequential=False) and chop_filter and self.close < self.trend_ema and not self.dumpump
 
     @property
     def calculatepositionsize(self):

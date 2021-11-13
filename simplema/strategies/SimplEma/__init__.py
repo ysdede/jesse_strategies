@@ -80,6 +80,7 @@ class SimplEma(Strategy):
                              sequential=False) and not self.dump_pump and dc
 
     def should_short(self) -> bool:
+        return False
         dc = True
         if self.donchian_filter_enabled:
             dc = self.close <= self.entry_donchian[1]

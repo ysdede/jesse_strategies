@@ -98,7 +98,7 @@ class OttBands1min(Strategy):
         return self.cross_up_upper_band
 
     def should_short(self) -> bool:
-        return self.cross_down_lower_band
+        return  self.cross_down_lower_band
 
     @property
     @cached
