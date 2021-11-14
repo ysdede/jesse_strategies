@@ -43,7 +43,7 @@ class OttBands5minFixed(Strategy):
     @property
     @cached
     def ott(self):
-        return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+        return cta.ott(self.candles[-480:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
 
     @property
     @cached
@@ -91,35 +91,17 @@ class OttBands5minFixed(Strategy):
     @cached
     def calc_risk_for_long(self):
         sl = self.calc_long_stop
-
         margin_size = self.pos_size_in_usd * self.leverage
         margin_risk = margin_size * ((self.close - sl) / self.close)
-        sl_x_lev = ((self.close - sl) / self.close)  # * self.leverage
-        # print('sl_x_lev', sl_x_lev)
-        leveraged_risk = (self.close - sl) * self.leverage
-        # if self.capital / leveraged_risk > self.hp['max_risk'] / 10:
-        if (margin_risk / self.capital * 100) > self.max_risk:
-            #print(
-            #    f'\nLong Margin Risk: {round(margin_risk)} | Capital: {round(self.capital)} | Risk % {round(margin_risk / self.capital * 100, 2)} | Price {self.close} | Stop price: {round(sl, 4)} | Stop diff: {round(self.close - sl, 4)} | Stoploss % {round((self.close - sl) / self.close * 100, 2)}')
-            return False
-        else:
-            return True
+        return margin_risk / self.capital * 100 <= self.max_risk
 
     @property
     @cached
     def calc_risk_for_short(self):
         sl = self.calc_short_stop
-
         margin_size = self.pos_size_in_usd * self.leverage
         margin_risk = margin_size * ((abs(self.close - sl)) / self.close)
-        # leveraged_risk = (self.close - sl) * self.leverage
-        # if self.capital / leveraged_risk > self.hp['max_risk'] / 10:
-        if (margin_risk / self.capital * 100) > self.max_risk:
-            #print(
-            #    f'\nShort Margin Risk: {round(margin_risk)} | Capital: {round(self.capital)} | Risk % {round(margin_risk / self.capital * 100, 2)} | Price {self.close} | Stop price: {round(sl, 4)} | Stop diff: {round(self.close - sl, 4)} | Stoploss % {round(abs(self.close - sl) / self.close * 100, 2)}')
-            return False
-        else:
-            return True
+        return margin_risk / self.capital * 100 <= self.max_risk
 
     def should_long(self) -> bool:
         return self.cross_up_upper_band and self.calc_risk_for_long

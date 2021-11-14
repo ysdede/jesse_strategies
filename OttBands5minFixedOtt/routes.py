@@ -1,6 +1,6 @@
 routes = [
 
-    ('Binance Futures', 'ETH-USDT', '5m', 'OttBands5minFixed'),
+    ('Binance Futures', 'ETH-USDT', '5m', 'OttBands5minFixed', '3OfXn'),
 
 ]
 
