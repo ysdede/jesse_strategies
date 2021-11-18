@@ -8,12 +8,12 @@ class EthMaximalist(Strategy):
     """ A Long only Jesse strategy makes profits from reversals.
     Inherited from Ott2butKAMARe3
     Backtest 2020-02-15 -> 2021-11-15
-    
+
     Event           Count   Mean %      Total USDT
     Stoploss        4       -18.055     -117240
     Take profit     3       92.234      158436
     Trend reversal  122     4.281       1017463
-    
+
     Position size increased to match benchmark's drawdown.
     See 'pos_size_usd' method.
 
@@ -35,31 +35,15 @@ class EthMaximalist(Strategy):
         self.revs_in_usd = 0.0
         self.log_enabled = False
 
-    @property
-    @cached
-    def ott_len(self):
-        return 24
+        # Parameters
+        self.ott_len = 24
+        self.ott_percent = 4.6
+        self.stop = 0.028
+        self.RRR = 9.85
+        self.chop_bw = 30.25
 
-    @property
-    @cached
-    def ott_percent(self):
-        return 4.6
-
-    @property
-    @cached
-    def stop(self):
-        return 0.028
-
-    @property
-    @cached
-    def RRR(self):
-        return 9.85
-
-    @property
-    @cached
-    def chop_bw(self):
-        return 30.25
-
+        self.pos_size_scaler = 0.17
+        
     @property
     @cached
     def ott(self):
@@ -76,16 +60,9 @@ class EthMaximalist(Strategy):
         return 40 + self.chop_bw
 
     @property
-    @cached
-    def chop_lower_band(self):
-        return 60 - self.chop_bw
-
-    @property
     def pos_size_usd(self):
-        return self.capital * 0.335
+        return self.capital * self.pos_size_scaler
         # return self.available_margin / 4 if self.margin_pos_size else self.capital / (self.n_of_routes * 5)
-        #
-        # return self.capital / 15 * self.leverage  # (self.n_of_routes * 5)
 
     @property
     @cached
@@ -102,7 +79,7 @@ class EthMaximalist(Strategy):
         self.buy = self.pos_size_qty, self.price
 
     def go_short(self):
-        self.sell = self.pos_size_qty, self.price
+        pass
 
     def on_open_position(self, order):
         self.kasa = self.capital
