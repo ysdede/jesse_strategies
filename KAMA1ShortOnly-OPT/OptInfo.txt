@@ -1,0 +1,2 @@
+jesse backtest 2019-12-15 2021-08-06
+600 days, 510 - 90 days split, 880 trades
