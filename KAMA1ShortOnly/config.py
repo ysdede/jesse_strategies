@@ -6,7 +6,7 @@ config = {
     # PostgreSQL is used as the database to store data such as candles.
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
     'databases': {
-        'postgres_host': '127.0.0.1',
+        'postgres_host': '192.168.1.25',
         'postgres_name': 'jesse_db',
         'postgres_port': 5432,
         'postgres_username': 'jesse_user',
@@ -46,7 +46,7 @@ config = {
             # accepted values are: 'cross' and 'isolated'
             'futures_leverage_mode': 'cross',
             # 1x, 2x, 10x, 50x, etc. Enter as integers
-            'futures_leverage': 5,
+            'futures_leverage': 20,
 
             'assets': [
                 {'asset': 'USDT', 'balance': 0},
@@ -68,14 +68,10 @@ config = {
             # accepted values are: 'cross' and 'isolated'
             'futures_leverage_mode': 'cross',
             # 1x, 2x, 10x, 50x, etc. Enter as integers
-            'futures_leverage': 5,
+            'futures_leverage': 20,
 
             'assets': [
                 {'asset': 'USDT', 'balance': 10_000},
-                {'asset': 'BUSD', 'balance': 0},
-                {'asset': 'BTC', 'balance': 0},
-                {'asset': 'BTCUP', 'balance': 0},
-                {'asset': 'BTCDOWN', 'balance': 0},
             ],
         },
 
@@ -92,7 +88,7 @@ config = {
             # accepted values are: 'cross' and 'isolated'
             'futures_leverage_mode': 'cross',
             # 1x, 2x, 10x, 50x, etc. Enter as integers
-            'futures_leverage': 10,
+            'futures_leverage': 25,
 
             'assets': [
                 {'asset': 'USDT', 'balance': 10_000},

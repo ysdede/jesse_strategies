@@ -8,7 +8,7 @@ import custom_indicators as cta
 # Old ott2 but uses KAMA instead of VAR.
 # Stoploss is still same.
 
-class Ott2butKAMA1ShortOnly(Strategy):
+class KAMA1ShortOnly(Strategy):
     def __init__(self):
         super().__init__()
         self.trade_ts = None
@@ -87,7 +87,7 @@ class Ott2butKAMA1ShortOnly(Strategy):
     @property
     @cached
     def pos_size(self):
-        return utils.size_to_qty((self.capital * 0.15), self.price, fee_rate=self.fee_rate) * self.leverage
+        return utils.size_to_qty((self.capital / (self.n_of_routes * 5)), self.price, fee_rate=self.fee_rate) * self.leverage
 
     def go_long(self):
         self.buy = self.pos_size, self.price
