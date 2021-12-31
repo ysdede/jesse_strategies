@@ -1,0 +1,177 @@
+Number of finished trials: 36
+Trial: 10 Values: [-0.25, 3.78] Params: {'ott_len': 19, 'ott_percent': 113, 'ott_bw_up': 166, 'ott_bw_down': 137, 'tps_qty_index': 42, 'max_risk_long': 62, 'max_risk_short': 68}
+Trial: 27 Values: [0.53, 3.68] Params: {'ott_len': 43, 'ott_percent': 194, 'ott_bw_up': 157, 'ott_bw_down': 160, 'tps_qty_index': 110, 'max_risk_long': 59, 'max_risk_short': 42}
+Trial: 22 Values: [1.15, 2.84] Params: {'ott_len': 58, 'ott_percent': 127, 'ott_bw_up': 92, 'ott_bw_down': 162, 'tps_qty_index': 96, 'max_risk_long': 30, 'max_risk_short': 26}
+Number of finished trials: 36
+Trial: 29 Values: [0.3, 4.51] Params: {'ott_len': 60, 'ott_percent': 240, 'ott_bw_up': 170, 'ott_bw_down': 126, 'tps_qty_index': 108, 'max_risk_long': 66, 'max_risk_short': 65}
+Trial: 27 Values: [0.53, 3.68] Params: {'ott_len': 43, 'ott_percent': 194, 'ott_bw_up': 157, 'ott_bw_down': 160, 'tps_qty_index': 110, 'max_risk_long': 59, 'max_risk_short': 42}
+Trial: 22 Values: [1.15, 2.84] Params: {'ott_len': 58, 'ott_percent': 127, 'ott_bw_up': 92, 'ott_bw_down': 162, 'tps_qty_index': 96, 'max_risk_long': 30, 'max_risk_short': 26}
+Number of finished trials: 36
+Trial: 29 Values: [0.3, 4.51] Params: {'ott_len': 60, 'ott_percent': 240, 'ott_bw_up': 170, 'ott_bw_down': 126, 'tps_qty_index': 108, 'max_risk_long': 66, 'max_risk_short': 65}
+Trial: 27 Values: [0.53, 3.68] Params: {'ott_len': 43, 'ott_percent': 194, 'ott_bw_up': 157, 'ott_bw_down': 160, 'tps_qty_index': 110, 'max_risk_long': 59, 'max_risk_short': 42}
+Trial: 22 Values: [1.15, 2.84] Params: {'ott_len': 58, 'ott_percent': 127, 'ott_bw_up': 92, 'ott_bw_down': 162, 'tps_qty_index': 96, 'max_risk_long': 30, 'max_risk_short': 26}
+Number of finished trials: 66
+Trial: 29 Values: [0.3, 4.51] Params: {'ott_len': 60, 'ott_bw_down': 126, 'tps_qty_index': 108, 'max_risk_long': 66, 'max_risk_short': 65, 'ott_percent': 240, 'ott_bw_up': 170}
+Trial: 27 Values: [0.53, 3.68] Params: {'ott_len': 43, 'ott_percent': 194, 'ott_bw_down': 160, 'tps_qty_index': 110, 'max_risk_long': 59, 'max_risk_short': 42, 'ott_bw_up': 157}
+Trial: 22 Values: [1.15, 2.84] Params: {'ott_len': 58, 'ott_percent': 127, 'tps_qty_index': 96, 'ott_bw_up': 92, 'ott_bw_down': 162, 'max_risk_long': 30, 'max_risk_short': 26}
+Number of finished trials: 720
+Trial: 616 Values: [-0.65, 5.52] Params: {'ott_len': 18, 'ott_percent': 235, 'ott_bw_up': 168, 'ott_bw_down': 79, 'tps_qty_index': 93, 'max_risk_long': 55, 'max_risk_short': 24}
+Trial: 545 Values: [-0.62, 5.38] Params: {'ott_len': 18, 'ott_percent': 235, 'ott_bw_up': 161, 'ott_bw_down': 79, 'tps_qty_index': 40, 'max_risk_long': 52, 'max_risk_short': 25}
+Trial: 659 Values: [1.07, 4.89] Params: {'ott_len': 54, 'ott_percent': 100, 'ott_bw_up': 99, 'ott_bw_down': 131, 'tps_qty_index': 20, 'max_risk_long': 66, 'max_risk_short': 66}
+Trial: 433 Values: [1.52, 4.47] Params: {'ott_len': 54, 'ott_percent': 88, 'ott_bw_up': 99, 'ott_bw_down': 98, 'tps_qty_index': 20, 'max_risk_long': 55, 'max_risk_short': 40}
+Trial: 681 Values: [1.73, 3.87] Params: {'ott_len': 54, 'ott_percent': 88, 'ott_bw_up': 99, 'ott_bw_down': 174, 'tps_qty_index': 38, 'max_risk_long': 52, 'max_risk_short': 24}
+Trial: 696 Values: [2.12, 3.6] Params: {'ott_len': 54, 'ott_percent': 117, 'ott_bw_up': 116, 'ott_bw_down': 137, 'tps_qty_index': 29, 'max_risk_long': 55, 'max_risk_short': 40}
+Number of finished trials: 2039
+Trial: 1524 Values: [1.3, 7.47] Params: {'ott_len': 64, 'ott_percent': 194, 'ott_bw_up': 144, 'ott_bw_down': 108, 'tps_qty_index': 47, 'max_risk_long': 60, 'max_risk_short': 32}
+Trial: 1722 Values: [1.3, 7.47] Params: {'ott_len': 64, 'ott_percent': 194, 'ott_bw_up': 144, 'ott_bw_down': 108, 'tps_qty_index': 47, 'max_risk_long': 60, 'max_risk_short': 32}
+Trial: 1767 Values: [1.3, 7.47] Params: {'ott_len': 64, 'ott_percent': 194, 'ott_bw_up': 144, 'ott_bw_down': 108, 'tps_qty_index': 47, 'max_risk_long': 60, 'max_risk_short': 32}
+Trial: 1823 Values: [1.3, 7.47] Params: {'ott_len': 64, 'ott_percent': 194, 'ott_bw_up': 144, 'ott_bw_down': 108, 'tps_qty_index': 47, 'max_risk_long': 60, 'max_risk_short': 32}
+Trial: 1993 Values: [1.3, 7.47] Params: {'ott_len': 64, 'ott_percent': 194, 'ott_bw_up': 144, 'ott_bw_down': 108, 'tps_qty_index': 47, 'max_risk_long': 60, 'max_risk_short': 32}
+Trial: 1945 Values: [1.42, 5.91] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 16, 'max_risk_long': 70, 'max_risk_short': 30}
+Trial: 1956 Values: [1.55, 5.61] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 14, 'max_risk_long': 70, 'max_risk_short': 29}
+Trial: 1226 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1422 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1533 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1565 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1639 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1786 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1796 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1886 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1914 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1921 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1960 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1987 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 2013 Values: [1.56, 5.21] Params: {'ott_len': 64, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 62, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1913 Values: [1.73, 5.01] Params: {'ott_len': 65, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 105, 'tps_qty_index': 51, 'max_risk_long': 63, 'max_risk_short': 30}
+Trial: 1862 Values: [1.89, 4.96] Params: {'ott_len': 18, 'ott_percent': 190, 'ott_bw_up': 151, 'ott_bw_down': 105, 'tps_qty_index': 14, 'max_risk_long': 70, 'max_risk_short': 30}
+Trial: 1971 Values: [4.88, 4.67] Params: {'ott_len': 18, 'ott_percent': 190, 'ott_bw_up': 151, 'ott_bw_down': 105, 'tps_qty_index': 62, 'max_risk_long': 70, 'max_risk_short': 30}
+Trial: 1655 Values: [5.54, 4.12] Params: {'ott_len': 15, 'ott_percent': 190, 'ott_bw_up': 144, 'ott_bw_down': 104, 'tps_qty_index': 47, 'max_risk_long': 63, 'max_risk_short': 32}
+Trial: 1779 Values: [5.73, 2.88] Params: {'ott_len': 15, 'ott_percent': 190, 'ott_bw_up': 158, 'ott_bw_down': 104, 'tps_qty_index': 109, 'max_risk_long': 60, 'max_risk_short': 30}
+Trial: 1826 Values: [7.47, 1.74] Params: {'ott_len': 15, 'ott_percent': 190, 'ott_bw_up': 75, 'ott_bw_down': 92, 'tps_qty_index': 14, 'max_risk_long': 63, 'max_risk_short': 30}
+Number of finished trials: 30
+Number of finished trials: 30
+Number of finished trials: 30
+Trial: 0 Values: [0.0, 0.0] Params: {'ott_len': 69, 'ott_percent': 158, 'ott_bw_up': 98, 'tps_qty_index': 54, 'max_risk_long': 94}
+Trial: 1 Values: [0.0, 0.0] Params: {'ott_len': 34, 'ott_percent': 517, 'ott_bw_up': 167, 'tps_qty_index': 100, 'max_risk_long': 63}
+Trial: 3 Values: [0.0, 0.0] Params: {'ott_len': 19, 'ott_percent': 332, 'ott_bw_up': 150, 'tps_qty_index': 4, 'max_risk_long': 87}
+Trial: 4 Values: [0.0, 0.0] Params: {'ott_len': 21, 'ott_percent': 524, 'ott_bw_up': 147, 'tps_qty_index': 105, 'max_risk_long': 94}
+Trial: 5 Values: [0.0, 0.0] Params: {'ott_len': 45, 'ott_percent': 517, 'ott_bw_up': 97, 'tps_qty_index': 88, 'max_risk_long': 34}
+Trial: 6 Values: [0.0, 0.0] Params: {'ott_len': 11, 'ott_percent': 375, 'ott_bw_up': 112, 'tps_qty_index': 9, 'max_risk_long': 55}
+Trial: 7 Values: [0.0, 0.0] Params: {'ott_len': 73, 'ott_percent': 219, 'ott_bw_up': 83, 'tps_qty_index': 6, 'max_risk_long': 42}
+Trial: 8 Values: [0.0, 0.0] Params: {'ott_len': 14, 'ott_percent': 394, 'ott_bw_up': 70, 'tps_qty_index': 90, 'max_risk_long': 36}
+Trial: 9 Values: [0.0, 0.0] Params: {'ott_len': 60, 'ott_percent': 263, 'ott_bw_up': 169, 'tps_qty_index': 58, 'max_risk_long': 97}
+Trial: 10 Values: [0.0, 0.0] Params: {'ott_len': 33, 'ott_percent': 548, 'ott_bw_up': 104, 'tps_qty_index': 43, 'max_risk_long': 42}
+Trial: 11 Values: [0.0, 0.0] Params: {'ott_len': 6, 'ott_percent': 505, 'ott_bw_up': 97, 'tps_qty_index': 47, 'max_risk_long': 73}
+Trial: 12 Values: [0.0, 0.0] Params: {'ott_len': 33, 'ott_percent': 303, 'ott_bw_up': 154, 'tps_qty_index': 72, 'max_risk_long': 46}
+Trial: 13 Values: [0.0, 0.0] Params: {'ott_len': 70, 'ott_percent': 351, 'ott_bw_up': 76, 'tps_qty_index': 99, 'max_risk_long': 75}
+Trial: 15 Values: [0.0, 0.0] Params: {'ott_len': 30, 'ott_percent': 528, 'ott_bw_up': 99, 'tps_qty_index': 35, 'max_risk_long': 52}
+Trial: 16 Values: [0.0, 0.0] Params: {'ott_len': 59, 'ott_percent': 205, 'ott_bw_up': 71, 'tps_qty_index': 61, 'max_risk_long': 91}
+Trial: 17 Values: [0.0, 0.0] Params: {'ott_len': 6, 'ott_percent': 308, 'ott_bw_up': 66, 'tps_qty_index': 10, 'max_risk_long': 77}
+Trial: 18 Values: [0.0, 0.0] Params: {'ott_len': 67, 'ott_percent': 371, 'ott_bw_up': 150, 'tps_qty_index': 28, 'max_risk_long': 40}
+Trial: 19 Values: [0.0, 0.0] Params: {'ott_len': 11, 'ott_percent': 480, 'ott_bw_up': 140, 'tps_qty_index': 36, 'max_risk_long': 30}
+Trial: 20 Values: [0.0, 0.0] Params: {'ott_len': 67, 'ott_percent': 319, 'ott_bw_up': 66, 'tps_qty_index': 99, 'max_risk_long': 46}
+Trial: 21 Values: [0.0, 0.0] Params: {'ott_len': 41, 'ott_percent': 156, 'ott_bw_up': 83, 'tps_qty_index': 60, 'max_risk_long': 71}
+Trial: 22 Values: [0.0, 0.0] Params: {'ott_len': 50, 'ott_percent': 295, 'ott_bw_up': 102, 'tps_qty_index': 62, 'max_risk_long': 44}
+Trial: 23 Values: [0.0, 0.0] Params: {'ott_len': 60, 'ott_percent': 543, 'ott_bw_up': 135, 'tps_qty_index': 110, 'max_risk_long': 92}
+Trial: 24 Values: [0.0, 0.0] Params: {'ott_len': 54, 'ott_percent': 58, 'ott_bw_up': 150, 'tps_qty_index': 77, 'max_risk_long': 59}
+Trial: 25 Values: [0.0, 0.0] Params: {'ott_len': 49, 'ott_percent': 475, 'ott_bw_up': 82, 'tps_qty_index': 97, 'max_risk_long': 74}
+Trial: 26 Values: [0.0, 0.0] Params: {'ott_len': 15, 'ott_percent': 384, 'ott_bw_up': 104, 'tps_qty_index': 116, 'max_risk_long': 33}
+Trial: 27 Values: [0.0, 0.0] Params: {'ott_len': 8, 'ott_percent': 285, 'ott_bw_up': 72, 'tps_qty_index': 65, 'max_risk_long': 100}
+Trial: 29 Values: [0.0, 0.0] Params: {'ott_len': 11, 'ott_percent': 539, 'ott_bw_up': 160, 'tps_qty_index': 79, 'max_risk_long': 37}
+Number of finished trials: 30
+Number of finished trials: 630
+Trial: 624 Values: [0.69, 6.02] Params: {'ott_len': 31, 'ott_percent': 78, 'ott_bw_up': 139, 'tps_qty_index': 110, 'max_risk_long': 61}
+Trial: 450 Values: [0.79, 5.93] Params: {'ott_len': 31, 'ott_percent': 103, 'ott_bw_up': 149, 'tps_qty_index': 110, 'max_risk_long': 91}
+Trial: 539 Values: [1.08, 5.71] Params: {'ott_len': 31, 'ott_percent': 78, 'ott_bw_up': 147, 'tps_qty_index': 110, 'max_risk_long': 49}
+Trial: 613 Values: [1.9, 3.07] Params: {'ott_len': 33, 'ott_percent': 129, 'ott_bw_up': 149, 'tps_qty_index': 59, 'max_risk_long': 52}
+Trial: 598 Values: [1.91, 0.7] Params: {'ott_len': 70, 'ott_percent': 170, 'ott_bw_up': 134, 'tps_qty_index': 69, 'max_risk_long': 52}
+Trial: 295 Values: [2.05, 0.31] Params: {'ott_len': 70, 'ott_percent': 170, 'ott_bw_up': 138, 'tps_qty_index': 64, 'max_risk_long': 52}
+Trial: 387 Values: [2.59, -0.81] Params: {'ott_len': 12, 'ott_percent': 78, 'ott_bw_up': 69, 'tps_qty_index': 42, 'max_risk_long': 45}
+Number of finished trials: 677
+Trial: 624 Values: [0.69, 6.02] Params: {'max_risk_long': 61, 'ott_bw_up': 139, 'ott_len': 31, 'ott_percent': 78, 'tps_qty_index': 110}
+Trial: 450 Values: [0.79, 5.93] Params: {'max_risk_long': 91, 'ott_bw_up': 149, 'ott_len': 31, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 539 Values: [1.08, 5.71] Params: {'max_risk_long': 49, 'ott_bw_up': 147, 'ott_len': 31, 'ott_percent': 78, 'tps_qty_index': 110}
+Trial: 634 Values: [1.08, 5.71] Params: {'max_risk_long': 49, 'ott_bw_up': 147, 'ott_len': 31, 'ott_percent': 78, 'tps_qty_index': 110}
+Trial: 651 Values: [1.13, 5.58] Params: {'max_risk_long': 67, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 78, 'tps_qty_index': 89}
+Trial: 660 Values: [1.45, 4.27] Params: {'max_risk_long': 79, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 41}
+Trial: 613 Values: [1.9, 3.07] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 59}
+Trial: 598 Values: [1.91, 0.7] Params: {'max_risk_long': 52, 'ott_bw_up': 134, 'ott_len': 70, 'ott_percent': 170, 'tps_qty_index': 69}
+Trial: 295 Values: [2.05, 0.31] Params: {'max_risk_long': 52, 'ott_bw_up': 138, 'ott_len': 70, 'ott_percent': 170, 'tps_qty_index': 64}
+Trial: 387 Values: [2.59, -0.81] Params: {'max_risk_long': 45, 'ott_bw_up': 69, 'ott_len': 12, 'ott_percent': 78, 'tps_qty_index': 42}
+Number of finished trials: 841
+Trial: 817 Values: [1.11, 6.56] Params: {'max_risk_long': 47, 'ott_bw_up': 139, 'ott_len': 31, 'ott_percent': 78, 'tps_qty_index': 110}
+Trial: 748 Values: [1.15, 5.7] Params: {'max_risk_long': 52, 'ott_bw_up': 147, 'ott_len': 33, 'ott_percent': 78, 'tps_qty_index': 86}
+Trial: 777 Values: [1.23, 5.54] Params: {'max_risk_long': 67, 'ott_bw_up': 147, 'ott_len': 33, 'ott_percent': 78, 'tps_qty_index': 84}
+Trial: 734 Values: [1.27, 5.25] Params: {'max_risk_long': 91, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 730 Values: [1.39, 4.42] Params: {'ott_len': 32, 'ott_percent': 103, 'ott_bw_up': 149, 'tps_qty_index': 84, 'max_risk_long': 67}
+Trial: 660 Values: [1.45, 4.27] Params: {'max_risk_long': 79, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 41}
+Trial: 753 Values: [1.85, 3.7] Params: {'max_risk_long': 65, 'ott_bw_up': 171, 'ott_len': 33, 'ott_percent': 170, 'tps_qty_index': 59}
+Trial: 613 Values: [1.9, 3.07] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 59}
+Trial: 692 Values: [1.9, 3.07] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 59}
+Trial: 757 Values: [2.04, 0.78] Params: {'ott_len': 70, 'ott_percent': 129, 'ott_bw_up': 116, 'tps_qty_index': 93, 'max_risk_long': 65}
+Trial: 295 Values: [2.05, 0.31] Params: {'max_risk_long': 52, 'ott_bw_up': 138, 'ott_len': 70, 'ott_percent': 170, 'tps_qty_index': 64}
+Trial: 707 Values: [3.78, -0.56] Params: {'max_risk_long': 55, 'ott_bw_up': 147, 'ott_len': 11, 'ott_percent': 342, 'tps_qty_index': 77}
+Number of finished trials: 878
+Trial: 817 Values: [1.11, 6.56] Params: {'ott_len': 31, 'ott_percent': 78, 'ott_bw_up': 139, 'tps_qty_index': 110, 'max_risk_long': 47}
+Trial: 854 Values: [1.29, 5.88] Params: {'max_risk_long': 49, 'ott_bw_up': 147, 'ott_len': 33, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 730 Values: [1.39, 4.42] Params: {'max_risk_long': 67, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 84}
+Trial: 660 Values: [1.45, 4.27] Params: {'max_risk_long': 79, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 41}
+Trial: 838 Values: [1.45, 4.27] Params: {'max_risk_long': 79, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 41}
+Trial: 753 Values: [1.85, 3.7] Params: {'max_risk_long': 65, 'ott_bw_up': 171, 'ott_len': 33, 'ott_percent': 170, 'tps_qty_index': 59}
+Trial: 613 Values: [1.9, 3.07] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 59}
+Trial: 692 Values: [1.9, 3.07] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 59}
+Trial: 757 Values: [2.04, 0.78] Params: {'max_risk_long': 65, 'ott_bw_up': 116, 'ott_len': 70, 'ott_percent': 129, 'tps_qty_index': 93}
+Trial: 295 Values: [2.05, 0.31] Params: {'max_risk_long': 52, 'ott_bw_up': 138, 'ott_len': 70, 'ott_percent': 170, 'tps_qty_index': 64}
+Trial: 707 Values: [3.78, -0.56] Params: {'max_risk_long': 55, 'ott_bw_up': 147, 'ott_len': 11, 'ott_percent': 342, 'tps_qty_index': 77}
+Number of finished trials: 990
+Trial: 817 Values: [1.11, 6.56] Params: {'max_risk_long': 47, 'ott_bw_up': 139, 'ott_len': 31, 'ott_percent': 78, 'tps_qty_index': 110}
+Trial: 945 Values: [1.84, 6.18] Params: {'ott_len': 32, 'ott_percent': 103, 'ott_bw_up': 149, 'tps_qty_index': 110, 'max_risk_long': 52}
+Trial: 753 Values: [1.85, 3.7] Params: {'max_risk_long': 65, 'ott_bw_up': 171, 'ott_len': 33, 'ott_percent': 170, 'tps_qty_index': 59}
+Trial: 949 Values: [2.02, 3.51] Params: {'max_risk_long': 55, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 77}
+Trial: 757 Values: [2.04, 0.78] Params: {'max_risk_long': 65, 'ott_bw_up': 116, 'ott_len': 70, 'ott_percent': 129, 'tps_qty_index': 93}
+Trial: 295 Values: [2.05, 0.31] Params: {'max_risk_long': 52, 'ott_bw_up': 138, 'ott_len': 70, 'ott_percent': 170, 'tps_qty_index': 64}
+Trial: 707 Values: [3.78, -0.56] Params: {'max_risk_long': 55, 'ott_bw_up': 147, 'ott_len': 11, 'ott_percent': 342, 'tps_qty_index': 77}
+Number of finished trials: 1025
+Trial: 817 Values: [1.11, 6.56] Params: {'max_risk_long': 47, 'ott_bw_up': 139, 'ott_len': 31, 'ott_percent': 78, 'tps_qty_index': 110}
+Trial: 945 Values: [1.84, 6.18] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 753 Values: [1.85, 3.7] Params: {'max_risk_long': 65, 'ott_bw_up': 171, 'ott_len': 33, 'ott_percent': 170, 'tps_qty_index': 59}
+Trial: 949 Values: [2.02, 3.51] Params: {'ott_len': 33, 'ott_percent': 129, 'ott_bw_up': 149, 'tps_qty_index': 77, 'max_risk_long': 55}
+Trial: 757 Values: [2.04, 0.78] Params: {'max_risk_long': 65, 'ott_bw_up': 116, 'ott_len': 70, 'ott_percent': 129, 'tps_qty_index': 93}
+Trial: 295 Values: [2.05, 0.31] Params: {'max_risk_long': 52, 'ott_bw_up': 138, 'ott_len': 70, 'ott_percent': 170, 'tps_qty_index': 64}
+Trial: 707 Values: [3.78, -0.56] Params: {'max_risk_long': 55, 'ott_bw_up': 147, 'ott_len': 11, 'ott_percent': 342, 'tps_qty_index': 77}
+Number of finished trials: 1172
+Trial: 1058 Values: [1.54, 6.83] Params: {'ott_len': 31, 'ott_percent': 94, 'ott_bw_up': 147, 'tps_qty_index': 110, 'max_risk_long': 55}
+Trial: 1115 Values: [1.54, 6.83] Params: {'max_risk_long': 55, 'ott_bw_up': 147, 'ott_len': 31, 'ott_percent': 94, 'tps_qty_index': 110}
+Trial: 945 Values: [1.84, 6.18] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 753 Values: [1.85, 3.7] Params: {'max_risk_long': 65, 'ott_bw_up': 171, 'ott_len': 33, 'ott_percent': 170, 'tps_qty_index': 59}
+Trial: 1056 Values: [1.88, 3.52] Params: {'ott_len': 33, 'ott_percent': 170, 'ott_bw_up': 171, 'tps_qty_index': 11, 'max_risk_long': 65}
+Trial: 949 Values: [2.02, 3.51] Params: {'max_risk_long': 55, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 77}
+Trial: 1087 Values: [2.16, 2.92] Params: {'ott_len': 33, 'ott_percent': 129, 'ott_bw_up': 147, 'tps_qty_index': 110, 'max_risk_long': 52}
+Trial: 707 Values: [3.78, -0.56] Params: {'max_risk_long': 55, 'ott_bw_up': 147, 'ott_len': 11, 'ott_percent': 342, 'tps_qty_index': 77}
+Number of finished trials: 1313
+Trial: 1281 Values: [1.68, 6.83] Params: {'max_risk_long': 52, 'ott_bw_up': 147, 'ott_len': 31, 'ott_percent': 94, 'tps_qty_index': 110}
+Trial: 945 Values: [1.84, 6.18] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 1272 Values: [1.84, 6.18] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 1301 Values: [1.84, 6.18] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 753 Values: [1.85, 3.7] Params: {'max_risk_long': 65, 'ott_bw_up': 171, 'ott_len': 33, 'ott_percent': 170, 'tps_qty_index': 59}
+Trial: 1056 Values: [1.88, 3.52] Params: {'max_risk_long': 65, 'ott_bw_up': 171, 'ott_len': 33, 'ott_percent': 170, 'tps_qty_index': 11}
+Trial: 1246 Values: [1.88, 3.52] Params: {'ott_len': 33, 'ott_percent': 170, 'ott_bw_up': 171, 'tps_qty_index': 11, 'max_risk_long': 65}
+Trial: 949 Values: [2.02, 3.51] Params: {'max_risk_long': 55, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 77}
+Trial: 1304 Values: [3.48, 3.07] Params: {'ott_len': 33, 'ott_percent': 129, 'ott_bw_up': 149, 'tps_qty_index': 59, 'max_risk_long': 52}
+Trial: 707 Values: [3.78, -0.56] Params: {'max_risk_long': 55, 'ott_bw_up': 147, 'ott_len': 11, 'ott_percent': 342, 'tps_qty_index': 77}
+Number of finished trials: 1314
+Trial: 1281 Values: [1.68, 6.83] Params: {'max_risk_long': 52, 'ott_bw_up': 147, 'ott_len': 31, 'ott_percent': 94, 'tps_qty_index': 110}
+Trial: 945 Values: [1.84, 6.18] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 1272 Values: [1.84, 6.18] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 1301 Values: [1.84, 6.18] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 1307 Values: [3.09, 4.08] Params: {'ott_len': 32, 'ott_percent': 103, 'ott_bw_up': 149, 'tps_qty_index': 110, 'max_risk_long': 66}
+Trial: 1304 Values: [3.48, 3.07] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 59}
+Trial: 707 Values: [3.78, -0.56] Params: {'max_risk_long': 55, 'ott_bw_up': 147, 'ott_len': 11, 'ott_percent': 342, 'tps_qty_index': 77}
+Number of finished trials: 1320
+Trial: 1281 Values: [1.68, 6.83] Params: {'ott_len': 31, 'ott_percent': 94, 'ott_bw_up': 147, 'tps_qty_index': 110, 'max_risk_long': 52}
+Trial: 945 Values: [1.84, 6.18] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 1272 Values: [1.84, 6.18] Params: {'ott_len': 32, 'ott_percent': 103, 'ott_bw_up': 149, 'tps_qty_index': 110, 'max_risk_long': 52}
+Trial: 1301 Values: [1.84, 6.18] Params: {'ott_len': 32, 'ott_percent': 103, 'ott_bw_up': 149, 'tps_qty_index': 110, 'max_risk_long': 52}
+Trial: 1307 Values: [3.09, 4.08] Params: {'max_risk_long': 66, 'ott_bw_up': 149, 'ott_len': 32, 'ott_percent': 103, 'tps_qty_index': 110}
+Trial: 1304 Values: [3.48, 3.07] Params: {'max_risk_long': 52, 'ott_bw_up': 149, 'ott_len': 33, 'ott_percent': 129, 'tps_qty_index': 59}
+Trial: 707 Values: [3.78, -0.56] Params: {'max_risk_long': 55, 'ott_bw_up': 147, 'ott_len': 11, 'ott_percent': 342, 'tps_qty_index': 77}

@@ -1,0 +1,5 @@
+pg_dump optuna_db > dumps/optuna_db_6.sql
+
+psql -h localhost -U postgres -p 5432 optuna_db_3 < dumps/optuna_db_3.sql
+
+psql -h localhost -U postgres -p 5432 optuna_db_10_2 < optuna_db_10_2.sql
