@@ -7,7 +7,7 @@ import custom_indicators as cta
 
 # Old ott2 but uses KAMA instead of VAR.
 # Stoploss is still same.
-# Long only fav. DNA: 9.9F`9
+# Long only fav. DNA: \\ERgMp
 
 class Ott2butKAMA1(Strategy):
     def __init__(self):
@@ -40,29 +40,25 @@ class Ott2butKAMA1(Strategy):
         ]
 
     @property
-    @cached
     def ott_len(self):
         return self.hp['ott_len']
 
     @property
-    @cached
     def ott_percent(self):
         return self.hp['ott_percent'] / 100
 
     @property
-    @cached
     def stop(self):
         return self.hp['stop_loss'] / 10000
 
     @property
-    @cached
     def RRR(self):
         return self.hp['risk_reward'] / 10
 
     @property
     @cached
     def ott(self):
-        return cta.ott(self.candles[-240:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
+        return cta.ott(self.candles[-960:, 2], self.ott_len, self.ott_percent, ma_type='kama', sequential=True)
 
     @property
     @cached
@@ -70,25 +66,22 @@ class Ott2butKAMA1(Strategy):
         return talib.RSI(self.candles[-240:, 2], self.hp['chop_rsi_len'])
 
     @property
-    @cached
     def chop_upper_band(self):
         return 40 + (self.hp['chop_bandwidth'] / 10)
 
     @property
-    @cached
     def chop_lower_band(self):
         return 60 - (self.hp['chop_bandwidth'] / 10)
 
-    def should_long(self) -> bool:
+    def should_long(self):
         return self.cross_up and self.chop[-1] > self.chop_upper_band
 
-    def should_short(self) -> bool:
-        return False  # self.cross_down and self.chop[-1] < self.chop_lower_band
+    def should_short(self):
+        return self.cross_down and self.chop[-1] < self.chop_lower_band
 
     @property
-    @cached
     def pos_size(self):
-        return utils.size_to_qty((self.capital * 0.1), self.price, fee_rate=self.fee_rate) * self.leverage
+        return utils.size_to_qty((self.capital * 0.05), self.price, fee_rate=self.fee_rate) * self.leverage
 
     def go_long(self):
         self.buy = self.pos_size, self.price
@@ -151,8 +144,9 @@ class Ott2butKAMA1(Strategy):
             self.liquidate()
             self.is_reversal = True
             
-        # if self.is_short and self.cross_up:
-        #     self.liquidate()
+        if self.is_short and self.cross_up:
+            self.liquidate()
+            self.is_reversal = True
 
     def terminate(self):
         # pass
