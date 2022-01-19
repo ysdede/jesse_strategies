@@ -190,7 +190,7 @@ class OB5F_LSv2(Strategy):
 
     @property
     def pos_size(self):
-        qty = round(utils.size_to_qty(self.pos_size_in_usd,self.price, precision=self.quantityPrecision, fee_rate=self.fee_rate) * self.leverage, self.quantityPrecision)
+        qty = utils.size_to_qty(self.pos_size_in_usd,self.price, precision=self.quantityPrecision, fee_rate=self.fee_rate) * self.leverage
         return max(self.minQty, qty)
 
     def go_long(self):
