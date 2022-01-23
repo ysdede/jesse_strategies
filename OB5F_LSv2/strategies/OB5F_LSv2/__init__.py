@@ -6,21 +6,24 @@ import talib
 import custom_indicators as cta
 from vars import tp_qtys
 import json
+from datetime import datetime
 
 # Ott Bands strategy with fixed risk allocation
+# Leverage must be to 10x!
 # Optimized with Optuna NSGA-II
 # Optuna optimization results removed. See OB5F_LS
 # Exchange rules have been added. For rounding concerns, minimum quantity, quantity precision, and quote precision are used.
 # Added a mechanism to liquidate remaining quantities when all take profit points are reached to eliminate any potential live/paper trading issues.
-# Leverage must be to 10x!
+# Added a method to update stoploss quantity when the position size is reduced!
 
 class OB5F_LSv2(Strategy):
     def __init__(self):
         super().__init__()
         self.rules = None
-        self.quantityPrecision = 6
+        self.quantityPrecision = 3
         self.quotePrecision = 8
         self.minQty = 0.01
+        self.pricePrecision = 3
         self.run_once = True
 
         self.tps_hit_max = len(tp_qtys[0])
@@ -30,6 +33,9 @@ class OB5F_LSv2(Strategy):
         self.initial_qty = 0
         self.longs = 0
         self.shorts = 0
+        
+        self.cycle_sl = 0.0
+        self.log_enabled = True
 
         self.fib = (0.01, 0.02, 0.03, 0.05, 0.08)
 
@@ -69,15 +75,17 @@ class OB5F_LSv2(Strategy):
                 if i['symbol'] == self.symbol.replace('-', ''):
                     self.rules = i
         except:
-            print("BinanceFuturesExchangeInfo.json not found")
+            self.console("BinanceFuturesExchangeInfo.json not found")
+            exit()
 
         if self.rules:
             self.quantityPrecision = int(self.rules['quantityPrecision'])
             self.quotePrecision = int(self.rules['quotePrecision'])
+            self.pricePrecision = int(self.rules['pricePrecision'])
             self.minQty = float(self.rules['filters'][1]['minQty'])
-            print(f"\n{self.symbol} rules set - quantityPrecision:{self.quantityPrecision}, minQty:{self.minQty}, quotePrecision:{self.quotePrecision}")
+            self.console(f"Rules set - quantityPrecision:{self.quantityPrecision}, minQty:{self.minQty}, quotePrecision:{self.quotePrecision}, pricePrecision:{self.pricePrecision}")
 
-        print(f"\n{self.symbol} - {self.tps_hit_max=}")
+        # print(f"\n{self.symbol} - {self.tps_hit_max=}")
 
         self.run_once = False
 
@@ -190,25 +198,25 @@ class OB5F_LSv2(Strategy):
 
     @property
     def pos_size(self):
-        qty = utils.size_to_qty(self.pos_size_in_usd,self.price, precision=self.quantityPrecision, fee_rate=self.fee_rate) * self.leverage
+        qty = round(utils.size_to_qty(self.pos_size_in_usd, self.price, precision=self.quantityPrecision, fee_rate=self.fee_rate) * self.leverage, self.quantityPrecision)
         return max(self.minQty, qty)
 
     def go_long(self):
-        self.buy = self.pos_size, round(self.price, self.quotePrecision)
+        self.buy = self.pos_size * 2, round(self.price, self.pricePrecision)
 
     def go_short(self):
-        self.sell = self.pos_size, round(self.price, self.quotePrecision)
+        self.sell = self.pos_size * 2, round(self.price, self.pricePrecision)
 
     @property
     def calc_long_stop(self):
-        return round(self.ott_l.ott[-1], self.quotePrecision)
+        return round(self.ott_l.ott[-1], self.pricePrecision)
 
     @property
     def calc_short_stop(self):
-        return round(self.ott_s.ott[-1], self.quotePrecision)
+        return round(self.ott_s.ott[-1], self.pricePrecision)
 
     def on_open_position(self, order):
-        self.tps_hit = 0
+        self.tps_hit = 0    # TODO Use reduced count!!!
         qty = self.position.qty
         share = self.position.qty / 10
         tps = []
@@ -217,9 +225,10 @@ class OB5F_LSv2(Strategy):
             side = 'Long'
             self.longs += 1
             sl = self.calc_long_stop
+            self.cycle_sl = sl
 
             for i in range(self.tps_hit_max):
-                p = round(self.position.entry_price * (1 + self.fib[i]), self.quotePrecision)
+                p = round(self.position.entry_price * (1 + self.fib[i]), self.pricePrecision)
                 q = round(tp_qtys[self.hp_l['tps_qty_index']][i] * share, self.quantityPrecision + 1)
                 tps.append((q, p))
 
@@ -229,24 +238,29 @@ class OB5F_LSv2(Strategy):
             sl = self.calc_short_stop
 
             for i in range(self.tps_hit_max):
-                p = round(self.position.entry_price * (1 - self.fib[i]), self.quotePrecision)
+                p = round(self.position.entry_price * (1 - self.fib[i]), self.pricePrecision)
                 q = round(tp_qtys[self.hp_s['tps_qty_index']][i] * share, self.quantityPrecision + 1)
                 tps.append((q, p))
 
         tp4_validation = round(qty - (tps[0][0] + tps[1][0] + tps[2][0] + tps[3][0]), self.quantityPrecision + 1)
         qty_validation = round(tps[0][0] + tps[1][0] + tps[2][0] + tps[3][0] + tps[4][0], self.quantityPrecision + 1)
 
-        print(f"\n {self.symbol} {side}, tps: {tps} {tp4_validation=}, {qty=} {qty_validation=}")
+        self.console(f"{side}, tps: {tps} {tp4_validation=}, {qty=} {qty_validation=}")
 
         if qty_validation != qty:
-            print(f'\n {side} QTY != Sum(qtys) {qty}!={qty_validation}' * 4)
+            self.console(f'{side} QTY != Sum(qtys) {qty}!={qty_validation}' * 4)
 
         if tp4_validation != tps[4][0]:
-            print(f'\n {side} tp4 qty != validation tp4 qty {tps[4][0]}!={tp4_validation}' * 4)
+            self.console(f'{side} tp4 qty != validation tp4 qty {tps[4][0]}!={tp4_validation} !')
 
+        self.cycle_sl = sl
         self.stop_loss = qty, sl
         self.take_profit = tps
         self.initial_qty = self.position.qty
+
+    def on_reduced_position(self, order) -> None:
+        self.stop_loss = self.position.qty, self.cycle_sl
+        self.console(f'✂ Reduced Qty: {self.position.qty}, Entry: {self.position.entry_price}, Starting Sl: {self.cycle_sl}')
 
     def on_close_position(self, order):
         self.tps_hit += 1
@@ -262,7 +276,7 @@ class OB5F_LSv2(Strategy):
         # Probably unnecessary Kill switch
         if self.tps_hit >= self.tps_hit_max:
             self.liquidate()
-            print(f'\n{self.symbol} Kill Switch: {self.tps_hit_max} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+            self.console(f'Kill Switch: {self.tps_hit_max} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
     def watch_list(self):
         return [
@@ -273,11 +287,16 @@ class OB5F_LSv2(Strategy):
 
     def terminate(self):
         ratio = round(self.longs / (self.longs + self.shorts), 2) if self.longs > 0 else 0
-        print(f"{self.symbol} - longs:{self.longs}, shorts:{self.shorts}, total:{self.longs + self.shorts}, ratio:{ratio}")
+        print(f"longs:{self.longs}, shorts:{self.shorts}, total:{self.longs + self.shorts}, ratio:{ratio}")
 
     def should_cancel(self) -> bool:
-        return False
+        return True
 
     def before(self) -> None:
         if self.run_once:
             self.first_run()
+
+    def console(self, msg):
+        if self.log_enabled:
+            ts = datetime.utcfromtimestamp(self.current_candle[0]/1000).strftime('%Y-%m-%d %H:%M:%S')
+            print(f'\n{ts} {self.symbol} {msg}')
