@@ -1,6 +1,6 @@
 {
     "timezone": "UTC",
-    "serverTime": 1642044628516,
+    "serverTime": 1642649403896,
     "futuresType": "U_MARGINED",
     "rateLimits": [{
             "rateLimitType": "REQUEST_WEIGHT",
@@ -4876,10 +4876,10 @@
             "liquidationFee": "0.015000",
             "marketTakeBound": "0.10",
             "filters": [{
-                    "minPrice": "0.0477",
+                    "minPrice": "0.0480",
                     "maxPrice": "1000",
                     "filterType": "PRICE_FILTER",
-                    "tickSize": "0.0001"
+                    "tickSize": "0.0010"
                 },
                 {
                     "stepSize": "1",
@@ -5182,10 +5182,10 @@
             "liquidationFee": "0.007500",
             "marketTakeBound": "0.10",
             "filters": [{
-                    "minPrice": "0.00512",
+                    "minPrice": "0.00520",
                     "maxPrice": "100",
                     "filterType": "PRICE_FILTER",
-                    "tickSize": "0.00001"
+                    "tickSize": "0.00010"
                 },
                 {
                     "stepSize": "1",
@@ -8201,10 +8201,10 @@
         {
             "symbol": "BTTUSDT",
             "pair": "BTTUSDT",
-            "contractType": "PERPETUAL",
+            "contractType": "",
             "deliveryDate": 4133404800000,
             "onboardDate": 1617692400000,
-            "status": "TRADING",
+            "status": "PENDING_TRADING",
             "maintMarginPercent": "2.5000",
             "requiredMarginPercent": "5.0000",
             "baseAsset": "BTT",
