@@ -9,7 +9,7 @@ import json
 from datetime import datetime
 
 # Ott Bands strategy with fixed risk allocation
-# Leverage must be to 10x!
+# Leverage must be 10x! You can adjust the risk allocation at self.buy and self.sell below - self.pos_size * 2
 # Optimized with Optuna NSGA-II
 # Optuna optimization results removed. See OB5F_LS
 # Exchange rules have been added. For rounding concerns, minimum quantity, quantity precision, and quote precision are used.
@@ -19,6 +19,8 @@ from datetime import datetime
 class OB5F_LSv2(Strategy):
     def __init__(self):
         super().__init__()
+
+        # DO NOT edit variables below. See settings section.
         self.rules = None
         self.quantityPrecision = 3
         self.quotePrecision = 8
@@ -35,9 +37,19 @@ class OB5F_LSv2(Strategy):
         self.shorts = 0
         
         self.cycle_sl = 0.0
-        self.log_enabled = True
-
         self.fib = (0.01, 0.02, 0.03, 0.05, 0.08)
+        # Higher take profit at 8% helps to avoid re-entry at the peak.
+        # Signal line crosses the upper band again and again.
+        # self.fib = (0.01, 0.02, 0.03, 0.05, 0.065)
+
+        # Set False after opening a long position to avoid re-opening a new long position.
+        # Set True after ott long signal (mavg) crosses down the ott line.
+        
+        self.ott_long_reset = True
+        self.prev_balance = 0
+
+        # Settings:
+        self.log_enabled = True
 
         # self.hp_l = {'ott_len': 37, 'ott_percent': 129, 'ott_bw_up': 111, 'tps_qty_index': 42, 'max_risk_long': 65}
         # self.hp_l = {'ott_len': 33, 'ott_percent': 129, 'ott_bw_up': 111, 'tps_qty_index': 65, 'max_risk_long': 85}
@@ -87,6 +99,7 @@ class OB5F_LSv2(Strategy):
 
         # print(f"\n{self.symbol} - {self.tps_hit_max=}")
 
+        self.prev_balance = self.balance
         self.run_once = False
 
     @property
@@ -187,7 +200,7 @@ class OB5F_LSv2(Strategy):
         return margin_risk / self.capital * 100 <= self.max_risk_short
 
     def should_long(self) -> bool:
-        return self.cross_up_upper_band and self.calc_risk_for_long
+        return self.cross_up_upper_band and self.calc_risk_for_long # and self.ott_long_reset
 
     def should_short(self) -> bool:
         return self.cross_down_lower_band and self.calc_risk_for_short
@@ -202,10 +215,10 @@ class OB5F_LSv2(Strategy):
         return max(self.minQty, qty)
 
     def go_long(self):
-        self.buy = self.pos_size * 2, round(self.price, self.pricePrecision)
+        self.buy = self.pos_size, round(self.price, self.pricePrecision)
 
     def go_short(self):
-        self.sell = self.pos_size * 2, round(self.price, self.pricePrecision)
+        self.sell = self.pos_size, round(self.price, self.pricePrecision)
 
     @property
     def calc_long_stop(self):
@@ -216,12 +229,14 @@ class OB5F_LSv2(Strategy):
         return round(self.ott_s.ott[-1], self.pricePrecision)
 
     def on_open_position(self, order):
+        self.prev_balance = self.balance
         self.tps_hit = 0    # TODO Use reduced count!!!
         qty = self.position.qty
         share = self.position.qty / 10
         tps = []
 
         if self.is_long:
+            self.ott_long_reset = False
             side = 'Long'
             self.longs += 1
             sl = self.calc_long_stop
@@ -245,7 +260,7 @@ class OB5F_LSv2(Strategy):
         tp4_validation = round(qty - (tps[0][0] + tps[1][0] + tps[2][0] + tps[3][0]), self.quantityPrecision + 1)
         qty_validation = round(tps[0][0] + tps[1][0] + tps[2][0] + tps[3][0] + tps[4][0], self.quantityPrecision + 1)
 
-        self.console(f"{side}, tps: {tps} {tp4_validation=}, {qty=} {qty_validation=}")
+        self.console(f"{side}, Entry: {self.position.entry_price:0.2f}, SL: {sl}, ott_l: {self.ott_l.ott[-1]:0.02f}, tps: {tps} {tp4_validation=}, {qty=} {qty_validation=}")
 
         if qty_validation != qty:
             self.console(f'{side} QTY != Sum(qtys) {qty}!={qty_validation}' * 4)
@@ -257,26 +272,35 @@ class OB5F_LSv2(Strategy):
         self.stop_loss = qty, sl
         self.take_profit = tps
         self.initial_qty = self.position.qty
+        self.tps = tps
 
     def on_reduced_position(self, order) -> None:
+        pnl = self.balance - self.prev_balance
+        self.prev_balance = self.balance
+        self.tps_hit += 1
         self.stop_loss = self.position.qty, self.cycle_sl
-        self.console(f'✂ Reduced Qty: {self.position.qty}, Entry: {self.position.entry_price}, Starting Sl: {self.cycle_sl}')
+        self.console(f'✂ Reduced. Tps hit: {self.tps_hit}/{self.tps_hit_max}, Tp: {self.tps[self.tps_hit-1]}, Price: {self.price:0.02f}, Remaining Qty: {self.position.qty}, Entry: {self.position.entry_price}, Starting Sl: {self.cycle_sl}, Pnl: {pnl:0.2f}')
 
     def on_close_position(self, order):
-        self.tps_hit += 1
+        # self.tps_hit += 1
+        pnl = self.balance - self.prev_balance
+        self.prev_balance = self.balance
+        self.console(f"🔒 Closed position. Price: {self.price:0.02f}, Pnl: {pnl:0.2f}, Tps hit: {self.tps_hit}/{self.tps_hit_max}")
 
     def update_position(self):
 
         if self.is_long and self.cross_down_l:
+            self.console(f"❌ Closing Long Position by cross down l. Tps hit: {self.tps_hit}/{self.tps_hit_max}, Remaining qty: {self.position.qty}, PNL: {self.position.pnl:0.02f}")
             self.liquidate()
 
         if self.is_short and self.cross_up_s:
+            self.console(f"❌ Closing Short Position by cross up s. Tps hit: {self.tps_hit}/{self.tps_hit_max}, Remaining qty: {self.position.qty}, PNL: {self.position.pnl:0.02f}")
             self.liquidate()
 
         # Probably unnecessary Kill switch
         if self.tps_hit >= self.tps_hit_max:
             self.liquidate()
-            self.console(f'Kill Switch: {self.tps_hit_max} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+            self.console(f'🌊 Kill Switch: {self.tps_hit_max} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
     def watch_list(self):
         return [
@@ -287,7 +311,7 @@ class OB5F_LSv2(Strategy):
 
     def terminate(self):
         ratio = round(self.longs / (self.longs + self.shorts), 2) if self.longs > 0 else 0
-        print(f"longs:{self.longs}, shorts:{self.shorts}, total:{self.longs + self.shorts}, ratio:{ratio}")
+        print(f"{self.symbol} longs:{self.longs}, shorts:{self.shorts}, total:{self.longs + self.shorts}, ratio:{ratio}")
 
     def should_cancel(self) -> bool:
         return True
@@ -295,6 +319,9 @@ class OB5F_LSv2(Strategy):
     def before(self) -> None:
         if self.run_once:
             self.first_run()
+        
+        if self.cross_down_l:
+            self.ott_long_reset = True
 
     def console(self, msg):
         if self.log_enabled:
