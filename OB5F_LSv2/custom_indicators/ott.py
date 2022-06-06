@@ -41,10 +41,7 @@ def ott(candles: np.ndarray, length: int = 2, percent: float = 1.4, ma_type="var
 
     ott_series = ott_fast(MAvg, percent, length)
 
-    if sequential:
-        return OTT(ott_series, MAvg)
-    else:
-        return OTT(ott_series[-1], MAvg[-1])
+    return OTT(ott_series, MAvg) if sequential else OTT(ott_series[-1], MAvg[-1])
 
 
 @numba.njit
